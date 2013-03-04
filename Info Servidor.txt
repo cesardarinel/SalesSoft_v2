@@ -2,7 +2,7 @@ Correo:
  	
     portafolios123@hotmail.com
 	
-Contraseña: 
+Contraseï¿½a: 
 
     p123456789
  		
@@ -12,6 +12,7 @@ Login entrada al servidor http://www.db4free.net
  		
 Database: portafolionumero
 Username: portafolio123
+ContraseÃ±a: 123456
 Allowed IPs: %
 Collation: utf8_general_ci
 Email: portafolios123@hotmail.com

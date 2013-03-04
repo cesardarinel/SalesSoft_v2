@@ -33,13 +33,14 @@ namespace ejemplo
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             conexion.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT *FROM tabla1 WHERE nombre='" + nombre.Text + "' AND contrasena='" + cb.Text + "' ", conexion);
+            MySqlCommand cmd = new MySqlCommand("SELECT *FROM usuarios WHERE nombre='" + nombre.Text + "' AND contrasena='" + cb.Text + "' ", conexion);
             MySqlDataReader leer = cmd.ExecuteReader();
             if (leer.Read())
                 MessageBox.Show("conectado");
             else
                 MessageBox.Show("Error");
             conexion.Close();
+            // kjlkjlkjlkjlkjasdasd 
         }
 
     }

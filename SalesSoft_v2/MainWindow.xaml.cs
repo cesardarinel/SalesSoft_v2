@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SalesSoft_v2.Recursos;
 using MySql.Data.MySqlClient;
+using SalesSoft_v2;
 
 namespace ejemplo
 {
@@ -22,25 +24,28 @@ namespace ejemplo
     public partial class MainWindow : Window
     {
 
-        MySqlConnection conexion = new MySqlConnection("Server=db4free.net;Database=portafolionumero;Uid=portafolio123;Pwd=123456;");
+       
 
         public MainWindow()
         {
-
+            if (!LlamarLogin())
+            {
+                Application.Current.Shutdown(-1);
+            }
             InitializeComponent();
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+       
+        private bool LlamarLogin()
         {
-            conexion.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT *FROM usuarios WHERE nombre='" + nombre.Text + "' AND contrasena='" + cb.Text + "' ", conexion);
-            MySqlDataReader leer = cmd.ExecuteReader();
-            if (leer.Read())
-                MessageBox.Show("conectado");
-            else
-                MessageBox.Show("Error");
-            conexion.Close();
-            // kjlkjlkjlkjlkjasdasd 
+            //instancio un objeto de la ventana login
+
+            Login1 login = new Login1();
+            //llamo esa ventana mientra ella no me responda el no puede hacer mas nada
+            login.ShowDialog();
+
+            //retorno verdadero o falso dependiendo la conexion
+            return login.Conexio;
+
         }
 
     }

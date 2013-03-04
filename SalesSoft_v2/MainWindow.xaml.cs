@@ -12,17 +12,35 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
-namespace SalesSoft_v2
+namespace ejemplo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        MySqlConnection conexion = new MySqlConnection("Server=db4free.net;Database=portafolionumero;Uid=portafolio123;Pwd=123456;");
+
         public MainWindow()
         {
+
             InitializeComponent();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            conexion.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT *FROM tabla1 WHERE nombre='" + nombre.Text + "' AND contrasena='" + cb.Text + "' ", conexion);
+            MySqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+                MessageBox.Show("conectado");
+            else
+                MessageBox.Show("Error");
+            conexion.Close();
+        }
+
     }
 }

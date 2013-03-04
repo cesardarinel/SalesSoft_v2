@@ -8,14 +8,10 @@ Contraseña:
  		
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
  		
-Login entrada al servidor http://members.000webhost.com/login.php
+Login entrada al servidor http://www.db4free.net
  		
-Dentro tenemos mysql 
- 		
-$mysql_host = "mysql11.000webhost.com";
- 		
-$mysql_database = "a9292057_db";
- 		
-$mysql_user = "a9292057_db";
- 		
-$mysql_password = "p123456";
+Database: portafolionumero
+Username: portafolio123
+Allowed IPs: %
+Collation: utf8_general_ci
+Email: portafolios123@hotmail.com

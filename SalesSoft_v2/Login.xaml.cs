@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using SalesSoft_v2.Recursos;
+
 namespace SalesSoft_v2
 {
     /// <summary>
@@ -20,6 +21,7 @@ namespace SalesSoft_v2
     /// </summary>
     public partial class Login1 : Window
     {
+        
         //variable conexion;
         public bool Conexio { get; set; }
         public Login1()

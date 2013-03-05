@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace SalesSoft_v2.Recursos
 {
+   
     abstract class Conexion
     {
         /// <summary>

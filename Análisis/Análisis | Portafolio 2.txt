@@ -1,0 +1,55 @@
+- Inventario
+	Todos los artículos existentes en la tienda.
+
+- Facturación
+	Interfaz de caja para facturar los productos.
+
+- Reportes
+	Reporte de Inventario
+	Reporte de Facturas
+	Reporte Individual de Facturas
+
+* Miembros del Club de Compras de la Tienda
+* Investigar sobre como funciona el NCF (hecho)
+* Forma de Pago - (Al contado, Tarjeta o Efectivo)
+* Verificación de Factura en la salida. (UC para portero en la salida)
+
+<-- Cliente Sin Membresía -->
+* Nombre
+* Teléfono
+* Dirección
+
+<-- Cliente Con Membresía ->
+* Lee de la Base de Datos
+* Se aplica un 10% de descuento
+
+<-- Almacenes -->
+* Almacenes
+	* Áreas
+		*Estantes = límite de productos.
+
+-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+
+<-- Ventana Inventario -->
+* Registrar Producto
+   + Almacén
+   + Área
+   + Estante 
+   + Código
+   + Cantidad
+
+<-- Ventana Reporte -->
+* Imprimir Facturas por Caja y Cobros - Por día
+* El REAL REPORTE: Se desea tener un reporte que muestre para cada almacén cuántos y cuáles productos fueron despachados, y un cuadro que muestre cuáles productos están en su nivel de reorden (baja existencia).Para gestionar la facturación, cada empleado tiene un usuario y contraseña que le permite registrar facturas en un cuadre independiente de los demás facturadores. Los facturadores pueden registrar nuevas facturas, crear nuevos clientes, modificar datos no identificadores de clientes, añadir productos a facturas, registrar cobros e imprimir facturas. Sólo los empleados supervisores podrán modificar facturas que no hayan sido cobradas. (PENDIENTE!!)
+
+<-- Ventana Configuración Usuarios -->
+* Crear Empleados
+* Modificar Empleados
+* Eliminar Empleados
+* Tipos de Empleados
+   + Facturador
+   + Supervisor
+   + Gerente
+   + Administrador de Sistema
+* Credenciales de Seguridad.
+

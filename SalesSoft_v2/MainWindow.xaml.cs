@@ -34,7 +34,10 @@ namespace ejemplo
             }
             InitializeComponent();
         }
-       
+       /// <summary>
+       /// llama el login y retorna verdadero o falso dependiendo de la conexion 
+       /// </summary>
+       /// <returns></returns>
         private bool LlamarLogin()
         {
             //instancio un objeto de la ventana login

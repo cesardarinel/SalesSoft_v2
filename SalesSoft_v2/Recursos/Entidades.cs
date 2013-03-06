@@ -180,7 +180,7 @@ namespace SalesSoft_v2.Recursos
                 _idEmpleado = value;
             }
         }
-        public etipoEmpleado TipoEmpleado { get; set; }
+        //public etipoEmpleado TipoEmpleado { get; set; }
         public Decimal Sueldo
         {
             get
@@ -256,8 +256,9 @@ namespace SalesSoft_v2.Recursos
         #endregion
         #region Propiedades
         public string NumeroCliente { get; set; }
-        public etipoCliente TipoCliente { get; set; }
-        #endregion
+    //        public etipoCliente TipoCliente { get; set; }
+        #endregion 
+         
         #region Constructor
         //
         public Cliente()

@@ -111,7 +111,7 @@ namespace ejemplo
                     currentPos += thickWidth;
 
                 }
-                mainCanvas.Children.Add(rect);
+              //  mainCanvas.Children.Add(rect);
 
             }
 
@@ -127,7 +127,7 @@ namespace ejemplo
             tb.Arrange(rx);
             Canvas.SetLeft(tb, (currentPos - tb.ActualWidth) / 2);
             Canvas.SetTop(tb, currentTop + 205);
-            mainCanvas.Children.Add(tb);
+            //mainCanvas.Children.Add(tb);
 
         }
 

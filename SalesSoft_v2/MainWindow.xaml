@@ -1,11 +1,49 @@
 ﻿<Window x:Class="ejemplo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
         Title="SalesSoft_v2" Height="350" Width="525" Loaded="FormLoad" >
+
     <Grid >
-    <Canvas Name="mainCanvas">
+        <DockPanel>
+        <r:Ribbon DockPanel.Dock="Top" Title="SalesSoft_v2" x:Name="ribbon" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31">
+                <r:Ribbon.ApplicationMenu>
+                    <r:RibbonApplicationMenu Visibility="Collapsed"/>
+                </r:Ribbon.ApplicationMenu>
 
+                <r:RibbonTab Header="Facturación">
+                    <r:RibbonGroup>
+                        <r:RibbonButton x:Name="botonEmpleado" Label="Empleado" LargeImageSource="Recursos/imagenes/attention.ico" />
+                        <r:RibbonButton x:Name="botnEstudiante" Label="Estudiante" LargeImageSource="Recursos/imagenes/attention.ico" />
+                      
+                       
+                    </r:RibbonGroup>
+                </r:RibbonTab>
 
-    </Canvas>
+                <r:RibbonTab Header="Reportes">
+                    <r:RibbonGroup>
+                        <r:RibbonButton x:Name="botonAsignaciones" Label="Asignaciones" LargeImageSource="Recursos/imagenes/attention.ico"  />
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <r:RibbonTab Header="Inventario">
+                    <r:RibbonGroup>
+                        <r:RibbonButton x:Name="botonReporteProfesores" Label="Reporte de Profesores" LargeImageSource="Recursos/imagenes/attention.ico" />
+                        <r:RibbonButton x:Name="botonReporteCurso" Label="Reporte de Curso" LargeImageSource="Recursos/imagenes/attention.ico"/>
+                        <r:RibbonButton x:Name="botonReporteEstudiante" Label="Reporte por Estudiante" LargeImageSource="Recursos/imagenes/attention.ico"  />
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <r:RibbonTab Header="Administracion">
+                    <r:RibbonGroup>
+                        <r:RibbonButton x:Name="botonNotasAcademicas" Label="Notas Académicas" LargeImageSource="Recursos/imagenes/attention.ico"  />
+                        <r:RibbonButton x:Name="botonNotasIndividuales" Label="Notas Individuales" LargeImageSource="Recursos/imagenes/attention.ico" />
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+            </r:Ribbon>
+        </DockPanel>
     </Grid>
+    
+
+
 </Window>

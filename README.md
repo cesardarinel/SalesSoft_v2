@@ -16,7 +16,7 @@ Portafolio2
 + Cuando un producto es facturado este se descuenta de existencia.
 
 + Se desea tener un reporte que muestre para cada almacén cuantos y cuales 
-productos fueron despachados, y un cuadro que muestre cuales productos están en su nivel de reorden. 
+productos fueron despachados, y un cuadro que muestre cuales productos están en su nivel de reorden (baja existencia). 
 
 + Para gestionarla facturación, cada empleado tiene un usuario y contraseña que le permite registrar facturas en un cuadre independiente de los demás facturadores.
 

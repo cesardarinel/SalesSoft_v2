@@ -259,6 +259,7 @@ namespace SalesSoft_v2.Recursos
         public etipoCliente TipoCliente { get; set; }
         #endregion
         #region Constructor
+        //
         public Cliente()
         {
 

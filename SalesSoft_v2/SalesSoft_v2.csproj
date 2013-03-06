@@ -59,7 +59,7 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Recursos\accesos.cs" />
+    <Compile Include="Recursos\Inventario.cs" />
     <Compile Include="Recursos\Codigobarra.cs" />
     <Compile Include="Recursos\Conexion.cs" />
     <Compile Include="Recursos\Entidades.cs" />

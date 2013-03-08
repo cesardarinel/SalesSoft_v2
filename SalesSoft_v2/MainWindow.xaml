@@ -21,14 +21,14 @@
             <RibbonTab Header="Facturación">
                 <RibbonGroup>
                     <RibbonButton x:Name="facturar" Label="Facturar" LargeImageSource="Images/friends_group.ico" Click="facturar_Click" />
-                    <RibbonButton x:Name="cuentasPorCobrar" Label="Cuentas Por Cobrar" LargeImageSource="Images/credit_card.ico" />
-                    <RibbonButton x:Name="listadoProductos" Label="Listado de Productos" LargeImageSource="Images/trash_box_2.ico" />
+                    <RibbonButton x:Name="cuentasPorCobrar" Label="Cuentas Por Cobrar" LargeImageSource="Images/credit_card.ico" Click="cuentasPorCobrar_Click" />
+                    <RibbonButton x:Name="listadoProductos" Label="Listado de Productos" LargeImageSource="Images/trash_box_2.ico" Click="listadoProductos_Click" />
                 </RibbonGroup>
             </RibbonTab>
 
             <RibbonTab Header="Inventario">
                 <RibbonGroup>
-                    <RibbonButton x:Name="almacenHardware" Label="Hardware" LargeImageSource="Images/forward.ico" />
+                    <RibbonButton x:Name="almacenHardware" Label="Hardware" LargeImageSource="Images/forward.ico" Click="almacenHardware_Click" />
                     <RibbonButton x:Name="almacenSoftware" Label="Software" LargeImageSource="Images/forward.ico" />
                     <RibbonButton x:Name="almacenPeriféricos" Label="Periféricos" LargeImageSource="Images/forward.ico" />
                 </RibbonGroup>

@@ -136,5 +136,23 @@ namespace SalesSoft_v2
             ucFacturacion mdiChild = new ucFacturacion();
             AddTab(mdiChild);
         }
+
+        private void cuentasPorCobrar_Click(object sender, RoutedEventArgs e)
+        {
+            ucCuentasPorCobrar mdiChild = new ucCuentasPorCobrar();
+            AddTab(mdiChild);
+        }
+
+        private void listadoProductos_Click(object sender, RoutedEventArgs e)
+        {
+            ucListadoProductos mdiChild = new ucListadoProductos()
+            AddTab(mdiChild);
+        }
+
+        private void almacenHardware_Click(object sender, RoutedEventArgs e)
+        {
+            ucAlmacenHardware mdiChild = new ucAlmacenHardware();
+            AddTab(mdiChild);
+        }
     }
 }

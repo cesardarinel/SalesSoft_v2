@@ -13,8 +13,8 @@
             <Canvas.Background>
                 <ImageBrush/>
             </Canvas.Background>
-            <Image Height="179" Canvas.Left="-79" Source="logo.jpg" Stretch="Fill" Canvas.Top="-14" Width="246"/>
         </Canvas>
+        <Image Margin="95,10,69,-101" Source="logo.jpg" Stretch="Fill"/>
 
     </Grid>
 </Window>

@@ -31,13 +31,13 @@ namespace SalesSoft_v2
                 Application.Current.Shutdown(-1);
             }
 
-            InitializeComponent();
+           InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
+        //private void InitializeComponent()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
        /// <summary>
        /// Llama el login y retorna verdadero o falso dependiendo de la conexion 

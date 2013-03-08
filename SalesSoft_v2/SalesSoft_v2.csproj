@@ -34,11 +34,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Web, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -47,15 +56,18 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="iTabbedMDI.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -98,6 +110,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Images\desktop.ini" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,7 +124,120 @@
     <Resource Include="Recursos\imagenes\attention.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo.jpg" />
+    <Resource Include="Images\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_down.ico" />
+    <Resource Include="Images\arrow_left-down.ico" />
+    <Resource Include="Images\arrow_left-up.ico" />
+    <Resource Include="Images\arrow_left.ico" />
+    <Resource Include="Images\arrow_right-down.ico" />
+    <Resource Include="Images\arrow_right-up.ico" />
+    <Resource Include="Images\arrow_right.ico" />
+    <Resource Include="Images\arrow_up.ico" />
+    <Resource Include="Images\attention.ico" />
+    <Resource Include="Images\backward.ico" />
+    <Resource Include="Images\bag.ico" />
+    <Resource Include="Images\base.ico" />
+    <Resource Include="Images\bonus.ico" />
+    <Resource Include="Images\bug.ico" />
+    <Resource Include="Images\calculator.ico" />
+    <Resource Include="Images\calendar.ico" />
+    <Resource Include="Images\cd_dvd.ico" />
+    <Resource Include="Images\check-64.ico" />
+    <Resource Include="Images\check.ico" />
+    <Resource Include="Images\check_2.ico" />
+    <Resource Include="Images\closed.ico" />
+    <Resource Include="Images\close_delete.ico" />
+    <Resource Include="Images\close_delete_2.ico" />
+    <Resource Include="Images\comment.ico" />
+    <Resource Include="Images\computer.ico" />
+    <Resource Include="Images\computer_monitor.ico" />
+    <Resource Include="Images\copy.ico" />
+    <Resource Include="Images\credit_card.ico" />
+    <Resource Include="Images\credit_card_back.ico" />
+    <Resource Include="Images\cut.ico" />
+    <Resource Include="Images\delete_2.ico" />
+    <Resource Include="Images\document_file.ico" />
+    <Resource Include="Images\email.ico" />
+    <Resource Include="Images\eraser.ico" />
+    <Resource Include="Images\favorite_love.ico" />
+    <Resource Include="Images\flag_mark_blue.ico" />
+    <Resource Include="Images\flag_mark_gray.ico" />
+    <Resource Include="Images\flag_mark_green.ico" />
+    <Resource Include="Images\flag_mark_red.ico" />
+    <Resource Include="Images\flag_mark_violet.ico" />
+    <Resource Include="Images\flag_mark_yellow.ico" />
+    <Resource Include="Images\folder.ico" />
+    <Resource Include="Images\forward.ico" />
+    <Resource Include="Images\friends_group.ico" />
+    <Resource Include="Images\help.ico" />
+    <Resource Include="Images\help_ring-buoy.ico" />
+    <Resource Include="Images\home.ico" />
+    <Resource Include="Images\information.ico" />
+    <Resource Include="Images\ipod.ico" />
+    <Resource Include="Images\key_login.ico" />
+    <Resource Include="Images\lamp_active.ico" />
+    <Resource Include="Images\lamp_inactive.ico" />
+    <Resource Include="Images\lock.ico" />
+    <Resource Include="Images\minus.ico" />
+    <Resource Include="Images\minus_2.ico" />
+    <Resource Include="Images\mobile_phone.ico" />
+    <Resource Include="Images\network.ico" />
+    <Resource Include="Images\network_close.ico" />
+    <Resource Include="Images\new_email.ico" />
+    <Resource Include="Images\next.ico" />
+    <Resource Include="Images\opened.ico" />
+    <Resource Include="Images\options.ico" />
+    <Resource Include="Images\options_2.ico" />
+    <Resource Include="Images\paste.ico" />
+    <Resource Include="Images\pause.ico" />
+    <Resource Include="Images\pencil_edit.ico" />
+    <Resource Include="Images\pie-chart_diagram.ico" />
+    <Resource Include="Images\pie-chart_graph.ico" />
+    <Resource Include="Images\play.ico" />
+    <Resource Include="Images\plus.ico" />
+    <Resource Include="Images\plus_2.ico" />
+    <Resource Include="Images\previous.ico" />
+    <Resource Include="Images\printer.ico" />
+    <Resource Include="Images\radio-button_off.ico" />
+    <Resource Include="Images\radio-button_on.ico" />
+    <Resource Include="Images\record.ico" />
+    <Resource Include="Images\refresh.ico" />
+    <Resource Include="Images\rss.ico" />
+    <Resource Include="Images\save_as.ico" />
+    <Resource Include="Images\save_diskette_floppy_disk.ico" />
+    <Resource Include="Images\search_lense.ico" />
+    <Resource Include="Images\shield_protect_off.ico" />
+    <Resource Include="Images\shield_protect_on.ico" />
+    <Resource Include="Images\shopping_cart.ico" />
+    <Resource Include="Images\shopping_cart_empty.ico" />
+    <Resource Include="Images\smartphone_2.ico" />
+    <Resource Include="Images\smartphone_iphone.ico" />
+    <Resource Include="Images\sound_music-off.ico" />
+    <Resource Include="Images\sound_music-on.ico" />
+    <Resource Include="Images\star.ico" />
+    <Resource Include="Images\star_2.ico" />
+    <Resource Include="Images\star_3.ico" />
+    <Resource Include="Images\stop.ico" />
+    <Resource Include="Images\stop_2.ico" />
+    <Resource Include="Images\tag_blue.ico" />
+    <Resource Include="Images\tag_gray.ico" />
+    <Resource Include="Images\tag_green.ico" />
+    <Resource Include="Images\tag_orange.ico" />
+    <Resource Include="Images\tag_red.ico" />
+    <Resource Include="Images\tag_violet.ico" />
+    <Resource Include="Images\tag_white.ico" />
+    <Resource Include="Images\tag_yellow.ico" />
+    <Resource Include="Images\time_clock.ico" />
+    <Resource Include="Images\trash_box.ico" />
+    <Resource Include="Images\trash_box_2.ico" />
+    <Resource Include="Images\unlock.ico" />
+    <Resource Include="Images\user_friend.ico" />
+    <Resource Include="Images\user_woman.ico" />
+    <Resource Include="Images\vote_no.ico" />
+    <Resource Include="Images\vote_yes.ico" />
+    <Resource Include="Images\wizard.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,6 +14,7 @@ namespace SalesSoft_v2.Recursos
         string _numeroSerial;
         Decimal _precio;
         #endregion
+
         #region Propiedades
         public int ID_Producto 
         {
@@ -60,8 +61,9 @@ namespace SalesSoft_v2.Recursos
             }
         }
         #endregion
+
         #region Constructores
-        public Inventario()
+        public Producto()
         {
 
         }
@@ -71,14 +73,16 @@ namespace SalesSoft_v2.Recursos
        
         #endregion
     }
-    class Hardware:Producto
+    class Hardware : Producto
     {
         #region Campos
        
         #endregion
+
         #region Propiedades
       
         #endregion
+
         #region Constructores
         public Hardware()
         {
@@ -87,14 +91,16 @@ namespace SalesSoft_v2.Recursos
         #endregion
 
     }
-    class Periferico:Producto
+    class Periferico : Producto
     {
         #region Campos
        
         #endregion
+
         #region Propiedades
       
         #endregion
+
         #region Constructores
         public Periferico()
         {
@@ -103,14 +109,16 @@ namespace SalesSoft_v2.Recursos
         #endregion
 
     }
-    class Software:Producto
+    class Software : Producto
     {
         #region Campos
        
         #endregion
+
         #region Propiedades
       
         #endregion
+
         #region Constructores
         public Software()
         {

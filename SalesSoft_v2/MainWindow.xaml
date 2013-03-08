@@ -1,52 +1,50 @@
-﻿<Window x:Class="ejemplo.MainWindow"
+﻿<RibbonWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
-        Title="SalesSoft_v2" Height="350" Width="525" Loaded="FormLoad" Icon="logo.jpg" WindowStyle="ThreeDBorderWindow" SnapsToDevicePixels="True" >
-    <Window.Effect>
-        <DropShadowEffect Color="#FFA27373"/>
-    </Window.Effect>
+        xmlns:r="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SIAC.MainWindow" 
+                WindowStartupLocation="CenterOwner" 
+                Icon="Images/wizard.ico" 
+                Title="SalesSoft | Tienda Informátia" 
+                ResizeMode="CanMinimize" 
+                MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                MinHeight="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                Left="0" Top="0"
+                WindowStyle="SingleBorderWindow" Width="1280" Height="760">
 
-    <Grid >
-        <DockPanel>
-        <r:Ribbon DockPanel.Dock="Top" Title="SalesSoft_v2" x:Name="ribbon" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31">
-                <r:Ribbon.ApplicationMenu>
-                    <r:RibbonApplicationMenu Visibility="Collapsed"/>
-                </r:Ribbon.ApplicationMenu>
+    <DockPanel>
+        <Ribbon DockPanel.Dock="Top" Title="WPF Ribbon - Document1" x:Name="ribbon" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed"/>
+            </Ribbon.ApplicationMenu>
 
-                <r:RibbonTab Header="Facturación">
-                    <r:RibbonGroup>
-                        <r:RibbonButton x:Name="botonEmpleado" Label="Empleado" LargeImageSource="Recursos/imagenes/attention.ico" />
-                        <r:RibbonButton x:Name="botnEstudiante" Label="Estudiante" LargeImageSource="Recursos/imagenes/attention.ico" />
-                      
-                       
-                    </r:RibbonGroup>
-                </r:RibbonTab>
+            <RibbonTab Header="Facturación">
+                <RibbonGroup>
+                    <RibbonButton x:Name="facturar" Label="Facturar" LargeImageSource="Images/friends_group.ico" />
+                    <RibbonButton x:Name="cuentasPorCobrar" Label="Cuentas Por Cobrar" LargeImageSource="Images/credit_card.ico" />
+                    <RibbonButton x:Name="listadoProductos" Label="Listado de Productos" LargeImageSource="Images/trash_box_2.ico" />
+                </RibbonGroup>
+            </RibbonTab>
 
-                <r:RibbonTab Header="Reportes">
-                    <r:RibbonGroup>
-                        <r:RibbonButton x:Name="botonAsignaciones" Label="Asignaciones" LargeImageSource="Recursos/imagenes/attention.ico"  />
-                    </r:RibbonGroup>
-                </r:RibbonTab>
+            <RibbonTab Header="Inventario">
+                <RibbonGroup>
+                    <RibbonButton x:Name="almacenHardware" Label="Hardware" LargeImageSource="Images/forward.ico" />
+                    <RibbonButton x:Name="almacenSoftware" Label="Software" LargeImageSource="Images/forward.ico" />
+                    <RibbonButton x:Name="almacenPeriféricos" Label="Periféricos" LargeImageSource="Images/forward.ico" />
+                </RibbonGroup>
+            </RibbonTab>
 
-                <r:RibbonTab Header="Inventario">
-                    <r:RibbonGroup>
-                        <r:RibbonButton x:Name="botonReporteProfesores" Label="Reporte de Profesores" LargeImageSource="Recursos/imagenes/attention.ico" />
-                        <r:RibbonButton x:Name="botonReporteCurso" Label="Reporte de Curso" LargeImageSource="Recursos/imagenes/attention.ico"/>
-                        <r:RibbonButton x:Name="botonReporteEstudiante" Label="Reporte por Estudiante" LargeImageSource="Recursos/imagenes/attention.ico"  />
-                    </r:RibbonGroup>
-                </r:RibbonTab>
+            <RibbonTab Header="Administración">
+                <RibbonGroup>
+                    <RibbonButton x:Name="agregarUsuarios" Label="Agregar Usuarios" LargeImageSource="Images/record.ico" />
+                    <RibbonButton x:Name="generarReporte" Label="Reportes" LargeImageSource="Images/record.ico" />
+                    <RibbonButton x:Name="modificarFactura" Label="Modificar Factura" LargeImageSource="Images/record.ico" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
 
-                <r:RibbonTab Header="Administracion">
-                    <r:RibbonGroup>
-                        <r:RibbonButton x:Name="botonNotasAcademicas" Label="Notas Académicas" LargeImageSource="Recursos/imagenes/attention.ico"  />
-                        <r:RibbonButton x:Name="botonNotasIndividuales" Label="Notas Individuales" LargeImageSource="Recursos/imagenes/attention.ico" />
-                    </r:RibbonGroup>
-                </r:RibbonTab>
-            </r:Ribbon>
-        </DockPanel>
-    </Grid>
-    
-
-
-</Window>
+        <StackPanel Width="1252">
+            <TabControl x:Name="tcMdi" Height="594" VerticalAlignment="Center" Margin="0 10 0 0"/>
+        </StackPanel>
+    </DockPanel>
+</RibbonWindow>

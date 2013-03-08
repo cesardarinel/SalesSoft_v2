@@ -1,4 +1,4 @@
-﻿<Window x:Class="SalesSoft_v2.Login1"
+﻿<Window x:Class="SalesSoft_v2.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Entrada Al Sistema " Height="354" Width="395.933" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False">

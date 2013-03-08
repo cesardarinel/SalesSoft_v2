@@ -45,14 +45,14 @@ namespace SalesSoft_v2
        /// <returns></returns>
         private bool LlamarLogin()
         {
-            //instancio un objeto de la ventana login
+            //Instancio un objeto de la ventana login
 
-            Login1 login = new Login1();
-            //llamo esa ventana mientra ella no me responda el no puede hacer mas nada
+            Login login = new Login();
+            //Llamo esa ventana mientra ella no me responda el no puede hacer mas nada
             login.ShowDialog();
 
-            //retorno verdadero o falso dependiendo la conexion
-            return login.Conexio;
+            //Retorno verdadero o falso dependiendo la conexion
+            return login.Connection;
 
         }
     }

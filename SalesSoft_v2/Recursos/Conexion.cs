@@ -11,7 +11,7 @@ namespace SalesSoft_v2.Recursos
     abstract class Conexion
     {
         /// <summary>
-        /// VAriable para coenctar con la base de datos...
+        /// Variable para coenctar con la base de datos...
         /// </summary>
         public static MySqlConnection varConexion = new MySqlConnection("Server=db4free.net;Database=portafolionumero;Uid=portafolio123;Pwd=123456;");
 

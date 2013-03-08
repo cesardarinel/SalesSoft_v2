@@ -19,25 +19,25 @@ namespace SalesSoft_v2
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Login1 : Window
+    public partial class Login : Window
     {
         
         //variable conexion;
-        public bool Conexio { get; set; }
-        public Login1()
+        public bool Connection { get; set; }
+
+        public Login()
         {
             InitializeComponent();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
             Conexion.AbrirConexion();
-            Conexio = false;
+            Connection = false;
             MySqlCommand preguntar = new MySqlCommand("SELECT *FROM usuarios WHERE nombre='" + textUsuario.Text + "' and contrasena='" + contrasena.Password + "'", Conexion.varConexion);
             MySqlDataReader data = preguntar.ExecuteReader();
             if (data.Read())
             {
-                Conexio = true;
+                Connection = true;
                 Conexion.CerrarConexion();
                 DialogResult = true;
             }
@@ -52,7 +52,7 @@ namespace SalesSoft_v2
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
-            Conexio = false;
+            Connection = false;
             DialogResult = true;
         }
     }

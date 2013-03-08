@@ -3,14 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:r="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon" 
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SalesSoft_v2.MainWindow" 
-                WindowStartupLocation="CenterOwner" 
+                WindowStartupLocation="CenterScreen" 
                 Icon="Images/wizard.ico" 
                 Title="SalesSoft | Tienda Informátia" 
-                ResizeMode="CanMinimize" 
+                ResizeMode="CanResizeWithGrip" 
                 MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                 MinHeight="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                 Left="0" Top="0"
-                WindowStyle="SingleBorderWindow" Width="1280" Height="760">
+                WindowStyle="SingleBorderWindow" Width="1280" Height="760" WindowState="Maximized" SizeToContent="Height">
 
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" Title="WPF Ribbon - Document1" x:Name="ribbon" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31">

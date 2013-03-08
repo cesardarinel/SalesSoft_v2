@@ -78,8 +78,17 @@
     <Compile Include="Recursos\Codigobarra.cs" />
     <Compile Include="Recursos\Conexion.cs" />
     <Compile Include="Recursos\Entidades.cs" />
+    <Compile Include="ucAgregarUsuario.xaml.cs">
+      <DependentUpon>ucAgregarUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ucAlmacenHardware.xaml.cs">
       <DependentUpon>ucAlmacenHardware.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucAlmacenPerifericos.xaml.cs">
+      <DependentUpon>ucAlmacenPerifericos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucAlmacenSoftware.xaml.cs">
+      <DependentUpon>ucAlmacenSoftware.xaml</DependentUpon>
     </Compile>
     <Compile Include="ucCuentasPorCobrar.xaml.cs">
       <DependentUpon>ucCuentasPorCobrar.xaml</DependentUpon>
@@ -87,8 +96,14 @@
     <Compile Include="ucFacturacion.xaml.cs">
       <DependentUpon>ucFacturacion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ucGenerarReporte.xaml.cs">
+      <DependentUpon>ucGenerarReporte.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ucListadoProductos.xaml.cs">
       <DependentUpon>ucListadoProductos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucModificarFactura.xaml.cs">
+      <DependentUpon>ucModificarFactura.xaml</DependentUpon>
     </Compile>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
@@ -106,7 +121,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ucAgregarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ucAlmacenHardware.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucAlmacenPerifericos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucAlmacenSoftware.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,7 +145,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ucGenerarReporte.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ucListadoProductos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucModificarFactura.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

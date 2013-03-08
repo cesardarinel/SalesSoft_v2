@@ -29,16 +29,16 @@
             <RibbonTab Header="Inventario">
                 <RibbonGroup>
                     <RibbonButton x:Name="almacenHardware" Label="Hardware" LargeImageSource="Images/forward.ico" Click="almacenHardware_Click" />
-                    <RibbonButton x:Name="almacenSoftware" Label="Software" LargeImageSource="Images/forward.ico" />
-                    <RibbonButton x:Name="almacenPeriféricos" Label="Periféricos" LargeImageSource="Images/forward.ico" />
+                    <RibbonButton x:Name="almacenSoftware" Label="Software" LargeImageSource="Images/forward.ico" Click="almacenSoftware_Click" />
+                    <RibbonButton x:Name="almacenPerifericos" Label="Periféricos" LargeImageSource="Images/forward.ico" Click="almacenPerifericos_Click"  />
                 </RibbonGroup>
             </RibbonTab>
 
             <RibbonTab Header="Administración">
                 <RibbonGroup>
-                    <RibbonButton x:Name="agregarUsuarios" Label="Agregar Usuarios" LargeImageSource="Images/record.ico" />
-                    <RibbonButton x:Name="generarReporte" Label="Reportes" LargeImageSource="Images/record.ico" />
-                    <RibbonButton x:Name="modificarFactura" Label="Modificar Factura" LargeImageSource="Images/record.ico" />
+                    <RibbonButton x:Name="agregarUsuarios" Label="Agregar Usuarios" LargeImageSource="Images/record.ico" Click="agregarUsuarios_Click" />
+                    <RibbonButton x:Name="generarReporte" Label="Reportes" LargeImageSource="Images/record.ico" Click="generarReporte_Click"  />
+                    <RibbonButton x:Name="modificarFactura" Label="Modificar Factura" LargeImageSource="Images/record.ico" Click="modificarFactura_Click" />
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>

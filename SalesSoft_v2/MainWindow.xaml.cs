@@ -145,13 +145,43 @@ namespace SalesSoft_v2
 
         private void listadoProductos_Click(object sender, RoutedEventArgs e)
         {
-            ucListadoProductos mdiChild = new ucListadoProductos()
+            ucListadoProductos mdiChild = new ucListadoProductos();
             AddTab(mdiChild);
         }
 
         private void almacenHardware_Click(object sender, RoutedEventArgs e)
         {
             ucAlmacenHardware mdiChild = new ucAlmacenHardware();
+            AddTab(mdiChild);
+        }
+
+        private void almacenSoftware_Click(object sender, RoutedEventArgs e)
+        {
+            ucAlmacenSoftware mdiChild = new ucAlmacenSoftware();
+            AddTab(mdiChild);
+        }
+
+        private void almacenPerifericos_Click(object sender, RoutedEventArgs e)
+        {
+            ucAlmacenPerifericos mdiChild = new ucAlmacenPerifericos();
+            AddTab(mdiChild);
+        }
+
+        private void agregarUsuarios_Click(object sender, RoutedEventArgs e)
+        {
+            ucAgregarUsuario mdiChild = new ucAgregarUsuario();
+            AddTab(mdiChild);
+        }
+
+        private void generarReporte_Click(object sender, RoutedEventArgs e)
+        {
+            ucGenerarReporte mdiChild = new ucGenerarReporte();
+            AddTab(mdiChild);
+        }
+
+        private void modificarFactura_Click(object sender, RoutedEventArgs e)
+        {
+            ucModificarFactura mdiChild = new ucModificarFactura();
             AddTab(mdiChild);
         }
     }

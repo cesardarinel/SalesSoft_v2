@@ -4,7 +4,7 @@
         Title="Entrada Al Sistema " Height="354" Width="395.933" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid Margin="0,0,-6,0" Height="101" VerticalAlignment="Top">
         <PasswordBox x:Name="contrasena" HorizontalAlignment="Left" Height="23" Margin="170,239,0,-161" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.667,0.435" Password="123"/>
-        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="220,267,0,-186" VerticalAlignment="Top" Width="75" Click="Button_Click_1" IsDefault="True"/>
+        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="220,267,0,-186" VerticalAlignment="Top" Width="75" Click="Button_Click" IsDefault="True"/>
         <Button x:Name="Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="140,267,0,-186" VerticalAlignment="Top" Width="75" Click="Cancelar_Click"/>
         <Label Content="Usuario" HorizontalAlignment="Left" Margin="95,207,0,-132" VerticalAlignment="Top" RenderTransformOrigin="-0.713,-0.471"/>
         <TextBox x:Name="textUsuario" HorizontalAlignment="Left" Height="23" Margin="170,210,0,-132" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.175,0.478" Text="Cesar"/>
@@ -14,7 +14,7 @@
                 <ImageBrush/>
             </Canvas.Background>
         </Canvas>
-        <Image Margin="95,10,69,-101" Source="logo.jpg" Stretch="Fill"/>
+        <Image Margin="95,10,69,-101" Source="Images\logo.jpg" Stretch="Fill"/>
 
     </Grid>
 </Window>

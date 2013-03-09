@@ -74,11 +74,11 @@ namespace SalesSoft_v2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Proces.Visibility = System.Windows.Visibility.Visible;
-            
+            Conexion.CerrarConexion();
             Conexion.AbrirConexion();
             Connection = false;
 
-            MySqlCommand preguntar = new MySqlCommand("SELECT *FROM usuarios WHERE nombre='" + textUsuario.Text + "' and contrasena='" + contrasena.Password + "'", Conexion.varConexion);
+            MySqlCommand preguntar = new MySqlCommand("SELECT *FROM empleados WHERE nombreusuario='" + textUsuario.Text + "' and clave='" + contrasena.Password + "'", Conexion.varConexion);
             MySqlDataReader data = preguntar.ExecuteReader();
             Process();
             if (data.Read())

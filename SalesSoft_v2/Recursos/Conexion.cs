@@ -14,11 +14,16 @@ namespace SalesSoft_v2.Recursos
         /// Variable para coenctar con la base de datos...
         /// </summary>
         public static MySqlConnection varConexion = new MySqlConnection("Server=db4free.net;Database=portafolionumero;Uid=portafolio123;Pwd=123456;");
-
+        /// <summary>
+        /// Abrir conexion
+        /// </summary>
         public static void AbrirConexion()
         {
             varConexion.Open();
         }
+        /// <summary>
+        /// Cerrar conexion 
+        /// </summary>
         public static void CerrarConexion()
         {
             varConexion.Close();

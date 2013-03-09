@@ -25,6 +25,7 @@ namespace SalesSoft_v2
     public partial class ucAgregarUsuario : UserControl, iTabbedMDI
     {
         bool nuevo = false;
+        int Activo;
         int vol;
         public ucAgregarUsuario()
         {
@@ -60,6 +61,7 @@ namespace SalesSoft_v2
             get { return "Agregar Usuario"; }
         }
         #endregion
+        
         #region Cargar/Mostrar
         public void CargarEmpleado()
         {
@@ -80,7 +82,7 @@ namespace SalesSoft_v2
         }
         public void MostrarTablas()
         {
-
+            Conexion.CerrarConexion();
             Conexion.AbrirConexion();
             ///agregamos la base de datos a la pantalla 
             MySqlDataAdapter da = new MySqlDataAdapter("SELECT* FROM empleados", Conexion.varConexion);
@@ -100,6 +102,7 @@ namespace SalesSoft_v2
             cbActivo.IsEnabled = a;
             btAgregar.IsEnabled = a;
             cbTUsuario.IsEnabled = a;
+            tbSueldo.IsEnabled = a;
 
         }
         #endregion
@@ -117,40 +120,50 @@ namespace SalesSoft_v2
         private void Agregar_Empleado(object sender, RoutedEventArgs e)
         {
 
-            Conexion.AbrirConexion();
+            
 
             Empleado Empleado = new Empleado();//creamos un objeto empleado
 
-            if (tbNombre.Text == string.Empty)
+            if (tbNombre.Text == string.Empty||tbNombre.Text.Length>10)
             {
-                MessageBox.Show("El campo nombre esta vacío, porfavor llene con un Nombre");
+                MessageBox.Show("El campo nombre esta vacío, porfavor llene con un Nombre ó tienes mas de 10 caracteres");
                 return;
             }
             Empleado.Nombre = tbNombre.Text;
-            if (tbNombreCompleto.Text == string.Empty)
+            if (tbNombreCompleto.Text == string.Empty || tbNombreCompleto.Text.Length > 60)
             {
-                MessageBox.Show("El campo Nombre Completo esta vacío, porfavor llene con un Nombre Completo ");
+                MessageBox.Show("El campo Nombre Completo esta vacío, porfavor llene con un Nombre Completo  ó tienes mas de 60 caracteres");
                 return;
             }
 
             Empleado.NombreCompleto = tbNombreCompleto.Text;
 
-            if (tbCedula.Text == string.Empty)
+            if (tbCedula.Text == string.Empty || tbCedula.Text.Length > 11)
             {
-                MessageBox.Show("El campo Cedula esta vacío, porfavor llene con un Cedula");
+                MessageBox.Show("El campo Cedula esta vacío, porfavor llene con un Cedula ó tienes mas de 11 caracteres");
                 return;
             }
             Empleado.Cedula = tbCedula.Text;
-            if (tbClave.Text == string.Empty)
+            if (tbClave.Text == string.Empty || tbClave.Text.Length > 30)
             {
-                MessageBox.Show("El campo Clave esta vacío, porfavor llene con un Clave");
+                MessageBox.Show("El campo Clave esta vacío, porfavor llene con un Clave  ó tienes mas de 30 caracteres");
                 return;
             }
             Empleado.Clave = tbClave.Text;
+            if (tbTelefono.Text == string.Empty || tbTelefono.Text.Length > 10)
+            {
+                MessageBox.Show("El campo Tipo Telefono esta vacío, porfavor llene con un Tipo Usuario  ó tienes mas de 10 caracteres");
+                return;
+            }
             Empleado.Telefono = tbTelefono.Text;
+            if (tbSueldo.Text == string.Empty || tbSueldo.Text.Length > 6)
+            {
+                MessageBox.Show("El campo Tipo Sueldo esta vacío, porfavor llene con un Tipo Usuario  ó tienes mas de 6 caracteres");
+                return;
+            }
             Empleado.Sueldo = Convert.ToDecimal(tbSueldo.Text);
 
-            if (cbTUsuario.Text == string.Empty)
+            if (cbTUsuario.Text == string.Empty )
             {
                 MessageBox.Show("El campo Tipo Usuario esta vacío, porfavor llene con un Tipo Usuario");
                 return;
@@ -158,28 +171,38 @@ namespace SalesSoft_v2
             Empleado.TUsuario = Convert.ToInt32(cbTUsuario.SelectedIndex + 1);
 
             if (cbActivo.IsChecked == true)
-                Empleado.Activo = true;
-            else
-                Empleado.Activo = false;
-
-            Conexion.CerrarConexion();
-
-            if (nuevo)
             {
-            //    Conexion.AbrirConexion();
-                MySqlCommand preguntar = new MySqlCommand("SELECT * FROM empleados WHERE nombreusuario='" + Empleado.Nombre + "'", Conexion.varConexion);
+                Empleado.Activo = true;
+                Activo = 1;
+            }
+            else
+            {
+                Empleado.Activo = false;
+                Activo = 0;
+            }
+
+            
+            
+            if(nuevo)
+            {
+
+                Conexion.CerrarConexion();
+                Conexion.AbrirConexion();
+                MySqlCommand preguntar = new MySqlCommand("SELECT * FROM empleados WHERE id_empleado = '" + (dgUsuario.CurrentRow.Index + 1) + "'", Conexion.varConexion);
+
                 MySqlDataReader leopregunta = preguntar.ExecuteReader();
+                
                 if (leopregunta.Read())
                 {
-
+                    Conexion.CerrarConexion();
                     Conexion.AbrirConexion();
-                    MySqlCommand Actualizar = new MySqlCommand("UPDATE empleados SET nombresusuario='" + Empleado.Nombre + "', nombrecompleto='" + Empleado.NombreCompleto + "',clave='" + Empleado.Clave
-                        + "',cedula='" + Empleado.Cedula + "',telefono='" + Empleado.Telefono + "',sueldo='" + Empleado.Sueldo + "',estado='" + Empleado.Activo + "'", Conexion.varConexion);
+                    MySqlCommand Actualizar = new MySqlCommand("UPDATE empleados SET nombreusuario='" + Empleado.Nombre + "', nombrecompleto='" + Empleado.NombreCompleto + "',clave='" + Empleado.Clave
+                        + "',cedula='" + Empleado.Cedula + "',telefono='" + Empleado.Telefono + "',tipousuario='" + Empleado.TUsuario + "',sueldo='" + Empleado.Sueldo + "',estado='" + Activo + "' WHERE id_empleado='" + vol + "'", Conexion.varConexion);
                     try
                     {
                         Actualizar.ExecuteNonQuery();
-                        MessageBox.Show("Información: Empleao Agregado.");
-                        MostrarTablas();
+                        MessageBox.Show("Información: Empleao Actualizado.");
+                        
                         tbNombre.Text = null;
                         tbNombreCompleto.Text = null;
                         tbTelefono.Text = null;
@@ -187,27 +210,51 @@ namespace SalesSoft_v2
                         tbCedula.Text = null;
                         tbSueldo.Text = null;
                         nuevo = false;
+                        Inicio(false);
+                        MostrarTablas();
                     }
-
                     finally
                     {
                         Conexion.CerrarConexion();
-
+                        
                     }
 
                     return;
                 }
             }
+            Conexion.CerrarConexion();
             Conexion.AbrirConexion();
+            MySqlCommand preguntar1 = new MySqlCommand("SELECT * FROM empleados WHERE nombreusuario = '" + Empleado.Nombre + "'", Conexion.varConexion);
+
+            MySqlDataReader leopregunta1 = preguntar1.ExecuteReader();
+
+            if (leopregunta1.Read())
+            {
+                MessageBox.Show("El campo Nombre ya esta en la base de datos ");
+                return;
+            }
+
+            Conexion.CerrarConexion();
+            Conexion.AbrirConexion();
+
             MySqlCommand agregarEmpleado = new MySqlCommand
-                ("INSERT INTO empleados (tipoempleado,nombreusuario,clave ,nombrecompleto ,cedula,telefono,sueldo,estado) VALUES('"
+                ("INSERT INTO empleados (tipousuario,nombreusuario,clave ,nombrecompleto ,cedula,telefono,sueldo,estado) VALUES('"
                 + Empleado.TUsuario + "','" + Empleado.Nombre + "','" + Empleado.Clave + "','" + Empleado.NombreCompleto + "','" + Empleado.Cedula
-                + "','" + Empleado.Telefono + "','" + Empleado.Sueldo + "','" + Empleado.Activo + "')", Conexion.varConexion);
+                + "','" + Empleado.Telefono + "','" + Empleado.Sueldo + "','" + Activo + "')", Conexion.varConexion);
 
             try
             {
                 agregarEmpleado.ExecuteNonQuery();
                 MessageBox.Show("Información: Empleado Agregado.");
+                tbNombre.Text = null;
+                tbNombreCompleto.Text = null;
+                tbTelefono.Text = null;
+                tbClave.Text = null;
+                tbCedula.Text = null;
+                tbSueldo.Text = null;
+                
+                Inicio(false);
+                MostrarTablas();
 
             }
 
@@ -218,13 +265,13 @@ namespace SalesSoft_v2
             }
         }
 
-
         void dgUsuario_Click(object sender, EventArgs e)
         {
 
             Inicio(true);
+            
             Conexion.AbrirConexion();
-            MySqlCommand tabla = new MySqlCommand("SELECT tipoempleado,nombreusuario,clave,nombrecompleto,cedula,telefono,sueldo,estado  FROM  empleados WHERE id_empleado='" + (dgUsuario.CurrentRow.Index + 1) + "'", Conexion.varConexion);
+            MySqlCommand tabla = new MySqlCommand("SELECT tipousuario,nombreusuario,clave,nombrecompleto,cedula,telefono,sueldo,estado  FROM  empleados WHERE id_empleado='" + (dgUsuario.CurrentRow.Cells[0].Value) + "'", Conexion.varConexion);
             MySqlDataReader data = tabla.ExecuteReader();
             while (data.Read())
             {
@@ -237,11 +284,38 @@ namespace SalesSoft_v2
                 tbCedula.Text = data.GetString(4);
                 tbTelefono.Text = data.GetString(5);
                 tbSueldo.Text = data.GetString(6);
-                //cbActivo = data.GetBoolean(7);
-                vol = dgUsuario.CurrentRow.Index + 1;
+               
+                vol = Convert.ToInt32(dgUsuario.CurrentRow.Cells[0].Value);
                 nuevo = true;
 
-            } Conexion.CerrarConexion();
+            } 
+            Conexion.CerrarConexion();
+
+        }
+
+        private void Registrar(object sender, RoutedEventArgs e)
+        {
+            tbNombre.Text = null;
+            tbNombreCompleto.Text = null;
+            tbTelefono.Text = null;
+            tbClave.Text = null;
+            tbCedula.Text = null;
+            tbSueldo.Text = null;
+            nuevo = false;
+            Inicio(true);
+        }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            nuevo = false;
+            tbNombre.Text = null;
+            tbNombreCompleto.Text = null;
+            tbTelefono.Text = null;
+            tbClave.Text = null;
+            tbCedula.Text = null;
+            tbSueldo.Text = null;
+            nuevo = false;
+            Inicio(false);
 
         }
 

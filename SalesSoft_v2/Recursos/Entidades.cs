@@ -10,13 +10,14 @@ namespace SalesSoft_v2.Recursos
     class Entidad
     {
         #region Campo
-        static int _ultimoID;
+        
         int _id;
         string _nombre;
         string _telefono;
         string _estado;
         #endregion
         #region Propiedades
+       
         public int ID
         {
             get
@@ -238,6 +239,22 @@ namespace SalesSoft_v2.Recursos
             //programar
             return "noc que tiene que ver las venta con el empleado";
         }
+       public void Entrada_Sistema(int id)
+        {
+            Conexion.AbrirConexion();
+
+            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipousuario  FROM  empleados  WHERE id_empleado='" + id + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                NombreCompleto = data.GetString(0);
+                TUsuario = data.GetInt32(1);
+              
+
+            }
+            Conexion.CerrarConexion();
+        }
         #endregion
     }
     //clase administrativo deveria heredar de empleado tiene todo lo que necesita ...
@@ -265,6 +282,7 @@ namespace SalesSoft_v2.Recursos
         int _id;
         bool _tipocliente;
         string _telefono;
+        string _direccion;
         #endregion
         #region Propiedades
         public int ID
@@ -300,6 +318,17 @@ namespace SalesSoft_v2.Recursos
                 _telefono = value;
             }
         }
+        public string Direccion
+        {
+            get
+            {
+                return _direccion;
+            }
+            set
+            {
+                _direccion = value;
+            }
+        }
         #endregion 
          
         #region Constructor
@@ -314,17 +343,17 @@ namespace SalesSoft_v2.Recursos
         {
             return "factura";
         }
-        void EmpleadoID(int id)
+        void ClienteID(int id)
         {
             Conexion.AbrirConexion();
-            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipocliente,cedula,telefono  FROM  clientes WHERE id_cliente='" + id + "'", Conexion.varConexion);
+            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipocliente,direccion,telefono  FROM  clientes WHERE id_cliente='" + id + "'", Conexion.varConexion);
             MySqlDataReader data = tabla.ExecuteReader();
             while (data.Read())
             {
 
                 NombreCompleto = data.GetString(0);
                 TipoCliente =Convert.ToBoolean( data.GetString(1));
-                Cedula = data.GetString(2);
+                Direccion = data.GetString(2);
                 Telefono = data.GetString(3);
 
             }

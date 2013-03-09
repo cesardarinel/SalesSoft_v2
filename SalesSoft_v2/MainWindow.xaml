@@ -13,7 +13,7 @@
         WindowStyle="SingleBorderWindow" Width="1280" Height="760">
 
     <DockPanel>
-        <Ribbon DockPanel.Dock="Top" Title="WPF Ribbon - Document1" x:Name="ribbon" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31">
+        <Ribbon DockPanel.Dock="Top"  x:Name="ribbon1" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31">
             <Ribbon.ApplicationMenu>
                 <RibbonApplicationMenu Visibility="Collapsed"/>
             </Ribbon.ApplicationMenu>

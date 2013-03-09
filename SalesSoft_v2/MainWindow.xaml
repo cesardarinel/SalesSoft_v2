@@ -13,12 +13,12 @@
         WindowStyle="SingleBorderWindow" Width="1280" Height="760">
 
     <DockPanel>
-        <Ribbon DockPanel.Dock="Top"  x:Name="ribbon1" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31">
+        <Ribbon DockPanel.Dock="Top"  x:Name="ribbon1" Background="White" Margin="10 0 10 0" FocusedBackground="#FFFFB700" MouseOverBackground="#FFFFB700" PressedBackground="#FFECBC31" RenderTransformOrigin="0.493,0.951">
             <Ribbon.ApplicationMenu>
                 <RibbonApplicationMenu Visibility="Collapsed"/>
             </Ribbon.ApplicationMenu>
 
-            <RibbonTab Header="Facturación">
+            <RibbonTab Name="Facturaciones" Header="Facturación">
                 <RibbonGroup>
                     <RibbonButton x:Name="facturar" Label="Facturar" LargeImageSource="Images/friends_group.ico" Click="facturar_Click" />
                     <RibbonButton x:Name="cuentasPorCobrar" Label="Cuentas Por Cobrar" LargeImageSource="Images/credit_card.ico" Click="cuentasPorCobrar_Click" />
@@ -26,7 +26,7 @@
                 </RibbonGroup>
             </RibbonTab>
 
-            <RibbonTab Header="Inventario">
+            <RibbonTab Name="Inventarios" Header="Inventario">
                 <RibbonGroup>
                     <RibbonButton x:Name="almacenHardware" Label="Hardware" LargeImageSource="Images/forward.ico" Click="almacenHardware_Click" />
                     <RibbonButton x:Name="almacenSoftware" Label="Software" LargeImageSource="Images/forward.ico" Click="almacenSoftware_Click" />
@@ -34,7 +34,7 @@
                 </RibbonGroup>
             </RibbonTab>
 
-            <RibbonTab Header="Administración">
+            <RibbonTab Name="admin"  Header="Administración">
                 <RibbonGroup>
                     <RibbonButton x:Name="agregarUsuarios" Label="Agregar Usuarios" LargeImageSource="Images/record.ico" Click="agregarUsuarios_Click" />
                     <RibbonButton x:Name="generarReporte" Label="Reportes" LargeImageSource="Images/record.ico" Click="generarReporte_Click"  />
@@ -44,7 +44,7 @@
         </Ribbon>
 
         <StackPanel Width="1252">
-            <TabControl x:Name="tcMdi" Height="594" VerticalAlignment="Center" Margin="0 10 0 0"/>
+            <TabControl x:Name="tcMdi" Height="591" VerticalAlignment="Center" Margin="0 10 0 0"/>
         </StackPanel>
     </DockPanel>
 </RibbonWindow>

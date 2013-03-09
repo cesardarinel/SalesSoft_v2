@@ -15,15 +15,14 @@ namespace SalesSoft_v2.Recursos
         string _nombre;
         string _numeroSerial;
         Decimal _precio;
-        int _cantidad;
-        int _estante;
         int _tipo;
+        int _existencia;
         #endregion
 
         #region Propiedades
-        public int ID_Producto 
+        public int ID_Producto
         {
-            get 
+            get
             {
                 return _id;
             }
@@ -32,6 +31,7 @@ namespace SalesSoft_v2.Recursos
                 _id = value;
             }
         }
+
         public string Fabricante
         {
             get
@@ -54,7 +54,7 @@ namespace SalesSoft_v2.Recursos
                 _modelo = value;
             }
         }
-        public string Nombre  
+        public string Nombre
         {
             get
             {
@@ -76,7 +76,7 @@ namespace SalesSoft_v2.Recursos
                 _numeroSerial = value;
             }
         }
-        public Decimal  Precio      
+        public Decimal Precio
         {
             get
             {
@@ -85,28 +85,6 @@ namespace SalesSoft_v2.Recursos
             set
             {
                 _precio = value;
-            }
-        }
-        public int Cantidad
-        {
-            get
-            {
-                return _cantidad;
-            }
-            set
-            {
-                _cantidad = value;
-            }
-        }
-        public int Estante
-        {
-            get
-            {
-                return _estante;
-            }
-            set
-            {
-                _estante = value;
             }
         }
         public int Tipo
@@ -120,31 +98,64 @@ namespace SalesSoft_v2.Recursos
                 _tipo = value;
             }
         }
+        public int ExistenciaMinima
+        {
+            get
+            {
+                return _existencia;
+            }
+            set
+            {
+                _existencia = value;
+            }
+        }
         #endregion
 
         #region Constructores
         public Producto()
         {
-            
+
         }
         #endregion
 
         #region Metodos
-       
+
         #endregion
     }
     class Hardware : Producto
     {
         #region Campos
-       
+        int _cantidad;
+        int _estante;
         #endregion
 
         #region Propiedades
-      
+        public int Estante {
+            get 
+            {
+                return _estante;
+            }
+            set
+            {
+                _estante = value;
+            }
+        }
+        public int Cantidad
+        {
+            get
+            {
+                return _cantidad;
+            }
+            set
+            {
+                _cantidad = value;
+            }
+        }
         #endregion
 
         #region Constructores
         public Hardware()
+            : base()
         {
             Tipo = 1;
         }
@@ -154,15 +165,17 @@ namespace SalesSoft_v2.Recursos
     class Periferico : Producto
     {
         #region Campos
-       
+        int cantidad;
+        int estante;
         #endregion
 
         #region Propiedades
-      
+
         #endregion
 
         #region Constructores
         public Periferico()
+            : base()
         {
             Tipo = 2;
         }
@@ -172,17 +185,20 @@ namespace SalesSoft_v2.Recursos
     class Software : Producto
     {
         #region Campos
-       
+        int cantidad;
+        int estante;
         #endregion
 
         #region Propiedades
-      
+
         #endregion
 
         #region Constructores
         public Software()
+            : base()
         {
             Tipo = 3;
+
         }
         #endregion
 

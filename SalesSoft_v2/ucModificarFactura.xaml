@@ -34,6 +34,7 @@
 
         <Label Content="Total a Pagar: $" HorizontalAlignment="Left" Margin="10,495,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Grid.RowSpan="2"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="143,495,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="2" FontSize="18" FontWeight="Bold"/>
+<<<<<<< HEAD
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Grid.Row="1"/>
         <Label Content="Dirección: " HorizontalAlignment="Left" Margin="10,258,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top" Grid.Row="1"/>
@@ -58,5 +59,45 @@
             </Canvas.Background>
         </Canvas>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="572,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+=======
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Dirección: " HorizontalAlignment="Left" Margin="10,87,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBox Name="tbDireccion" HorizontalAlignment="Left" Height="23" Margin="80,87,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <TextBox Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="80,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Grid.Row="1"/>
+        <TextBox Name="tbNMienbro" HorizontalAlignment="Left" Height="23" Margin="95,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" Grid.RowSpan="2"/>
+        <Button Name="bProcesar" Content="Procesar" HorizontalAlignment="Left" Margin="403,18,0,0" VerticalAlignment="Top" Width="75" Grid.RowSpan="2" Height="26" />
+        <Label Content="Miembro No:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox Name="tbTelefono" HorizontalAlignment="Left" Height="23" Margin="80,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Grid.Row="1"/>
+        <CheckBox Name="cbActivo" Content="Activo" HorizontalAlignment="Left" Margin="403,24,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Name="bCargar" Content="Cargar &#xD;&#xA;Miembro" HorizontalAlignment="Left" Margin="499,18,0,0" VerticalAlignment="Top" Width="75" Grid.RowSpan="2" Height="57"/>
+        <Separator HorizontalAlignment="Left" Height="28" Margin="457,0,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.603"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <GroupBox Header="Agregar Producto" HorizontalAlignment="Left" Margin="588,5,0,0" VerticalAlignment="Top" Height="83" Width="425" Grid.RowSpan="2"/>
+        <Label Content="Artículo:" HorizontalAlignment="Left" Margin="594,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="603,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="653,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="653,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="718,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="783,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="928,18,0,0" VerticalAlignment="Top" Width="75" Height="26" Grid.Row="1"/>
+        <Button Content="Quitar" HorizontalAlignment="Left" Margin="848,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="26"/>
+        <GroupBox Header="Pago" HorizontalAlignment="Left" Margin="1018,0,0,0" VerticalAlignment="Top" Height="83" Width="230" Grid.RowSpan="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="1122,22,0,0" VerticalAlignment="Top" Width="120" Grid.RowSpan="2">
+            <ComboBoxItem Content="Efectivo"/>
+            <ComboBoxItem Content="Tarjeta de Crédito"/>
+            <ComboBoxItem Content="Cheque"/>
+        </ComboBox>
+        <Label Content="Forma de Pago:" HorizontalAlignment="Left" Margin="1024,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <CheckBox Content="A crédito" HorizontalAlignment="Left" Margin="1028,24,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+>>>>>>> Agregar Hadware completo XD
     </Grid>
 </UserControl>

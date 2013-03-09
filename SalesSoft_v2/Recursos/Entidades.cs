@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace SalesSoft_v2.Recursos
 {
@@ -259,20 +260,46 @@ namespace SalesSoft_v2.Recursos
 
     class Cliente : Persona
     {
-        #region Enum
-        enum etipoCliente
-        {
-            registrado,
-            noregistrado
-        }
-        #endregion
+        
         #region Campo
-        //        ring _numeroCliente;
-
+        int _id;
+        bool _tipocliente;
+        string _telefono;
         #endregion
         #region Propiedades
-        public string NumeroCliente { get; set; }
-    //        public etipoCliente TipoCliente { get; set; }
+        public int ID
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
+        public bool TipoCliente
+        {
+            get
+            {
+                return _tipocliente;
+            }
+            set
+            {
+                _tipocliente = value;
+            }
+        }
+        public string Telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+            set
+            {
+                _telefono = value;
+            }
+        }
         #endregion 
          
         #region Constructor
@@ -286,6 +313,22 @@ namespace SalesSoft_v2.Recursos
         string Factura()
         {
             return "factura";
+        }
+        void EmpleadoID(int id)
+        {
+            Conexion.AbrirConexion();
+            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipocliente,cedula,telefono  FROM  clientes WHERE id_cliente='" + id + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                NombreCompleto = data.GetString(0);
+                TipoCliente =Convert.ToBoolean( data.GetString(1));
+                Cedula = data.GetString(2);
+                Telefono = data.GetString(3);
+
+            }
+            Conexion.CerrarConexion();
         }
         #endregion
     }

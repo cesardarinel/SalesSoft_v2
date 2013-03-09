@@ -10,7 +10,6 @@ namespace SalesSoft_v2.Recursos
     class Entidad
     {
         #region Campo
-        
         int _id;
         string _nombre;
         string _telefono;
@@ -227,6 +226,22 @@ namespace SalesSoft_v2.Recursos
         {
 
         }
+        public Empleado(int id)
+        {
+            Conexion.AbrirConexion();
+
+            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipousuario  FROM  empleados  WHERE id_empleado='" + id + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                NombreCompleto = data.GetString(0);
+                TUsuario = data.GetInt32(1);
+
+
+            }
+            Conexion.CerrarConexion();
+        }
         #endregion
         #region Metodo
         string MostrarInfo()
@@ -239,22 +254,7 @@ namespace SalesSoft_v2.Recursos
             //programar
             return "noc que tiene que ver las venta con el empleado";
         }
-       public void Entrada_Sistema(int id)
-        {
-            Conexion.AbrirConexion();
-
-            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipousuario  FROM  empleados  WHERE id_empleado='" + id + "'", Conexion.varConexion);
-            MySqlDataReader data = tabla.ExecuteReader();
-            while (data.Read())
-            {
-
-                NombreCompleto = data.GetString(0);
-                TUsuario = data.GetInt32(1);
-              
-
-            }
-            Conexion.CerrarConexion();
-        }
+       
         #endregion
     }
     //clase administrativo deveria heredar de empleado tiene todo lo que necesita ...
@@ -335,6 +335,33 @@ namespace SalesSoft_v2.Recursos
         //
         public Cliente()
         {
+
+        }
+        public Cliente(int id)
+        {
+
+            Conexion.AbrirConexion();
+
+            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipocliente,direccion,telefono  FROM  clientes  WHERE id_cliente='" + id + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                NombreCompleto = data.GetString(0);
+                if (Convert.ToInt32(data.GetString(1)) == 1)
+                {
+                    TipoCliente = true;
+                }
+                else
+                {
+                    TipoCliente = false;
+                }
+                Direccion = data.GetString(2);
+                Telefono = data.GetString(3);
+
+
+            }
+            Conexion.CerrarConexion();
 
         }
         #endregion

@@ -28,19 +28,44 @@ namespace SalesSoft_v2
 
         public MainWindow()
         {
-            if (!LlamarLogin())
+
+           // Conexion.IdEntradaSistema = 1;
+            if(!LlamarLogin())
             {
                 Application.Current.Shutdown(-1);
             }
-
-           InitializeComponent();
+          
+            InitializeComponent();
+             Entrada_al_Sistema();
         }
 
-        //private void InitializeComponent()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private void Entrada_al_Sistema()
+        {
+           Empleado Entrada = new Empleado();
+             Entrada.Entrada_Sistema(Conexion.IdEntradaSistema);
+             this.Title = "SalesSoft | Tienda Informátia||   Hola :" + Entrada.NombreCompleto + "";
+            #region Tipos Usuarios
+             switch (Entrada.TUsuario)
+             {
+                 case 1:
+                     admin.IsEnabled = false;
+                     Inventarios.IsEnabled = false;
+                     listadoProductos.IsEnabled = false;
+                     break;
+                 case 2:
+                     admin.IsEnabled = false;
+                     Facturaciones.IsEnabled = false;
+                     break;
+                 case 3:
+                     admin.IsEnabled = false;
+                     Inventarios.IsEnabled = false;
+                     break;
+                 default:
+                     break;
+             }
 
+            #endregion
+        }
        /// <summary>
        /// Llama el login y retorna verdadero o falso dependiendo de la conexion 
        /// </summary>

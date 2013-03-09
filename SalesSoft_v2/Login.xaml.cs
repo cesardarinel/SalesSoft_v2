@@ -40,30 +40,25 @@ namespace SalesSoft_v2
 
         private void Process()
         {
-            //Configure the ProgressBar
+           
+
             Proces.Minimum = 0;
             Proces.Maximum = short.MaxValue;
             Proces.Value = 0;
 
-            //Stores the value of the ProgressBar
+            
             double value = 0;
 
-            //Create a new instance of our ProgressBar Delegate that points
-            // to the ProgressBar's SetValue method.
+            
             UpdateProgressBarDelegate updatePbDelegate =
                 new UpdateProgressBarDelegate(Proces.SetValue);
 
-            //Tight Loop: Loop until the ProgressBar.Value reaches the max
+           
             do
             {
                 value += 2;
 
-                /*Update the Value of the ProgressBar:
-                    1) Pass the "updatePbDelegate" delegate
-                       that points to the Proces.SetValue method
-                    2) Set the DispatcherPriority to "Background"
-                    3) Pass an Object() Array containing the property
-                       to update (ProgressBar.ValueProperty) and the new value */
+                
                 Dispatcher.Invoke(updatePbDelegate,
                     System.Windows.Threading.DispatcherPriority.Background,
                     new object[] { ProgressBar.ValueProperty, value });
@@ -79,14 +74,16 @@ namespace SalesSoft_v2
             Conexion.AbrirConexion();
             Connection = false;
 
-            MySqlCommand preguntar = new MySqlCommand("SELECT *FROM empleados WHERE nombreusuario='" + textUsuario.Text + "' and clave='" + contrasena.Password + "'", Conexion.varConexion);
+            MySqlCommand preguntar = new MySqlCommand("SELECT id_empleado,nombreusuario,clave FROM empleados WHERE nombreusuario='" + textUsuario.Text + "' AND clave='" + contrasena.Password + "'", Conexion.varConexion);
             MySqlDataReader data = preguntar.ExecuteReader();
             Process();
             if (data.Read())
             {
                 Connection = true;
+                Conexion.IdEntradaSistema=Convert.ToInt32( data.GetString(0));
                 Conexion.CerrarConexion();
-                DialogResult = true;
+                
+               DialogResult = true;
             }
             else
             {
@@ -102,7 +99,7 @@ namespace SalesSoft_v2
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
             Connection = false;
-            DialogResult = true;
+            this.DialogResult = true;
         }
     }
 }

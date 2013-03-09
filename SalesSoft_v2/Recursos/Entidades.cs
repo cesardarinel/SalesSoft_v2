@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace SalesSoft_v2.Recursos
 {
     class Entidad
     {
         #region Campo
-        static int _ultimoID;
+        
         int _id;
         string _nombre;
         string _telefono;
         string _estado;
         #endregion
         #region Propiedades
+       
         public int ID
         {
             get
@@ -237,6 +239,22 @@ namespace SalesSoft_v2.Recursos
             //programar
             return "noc que tiene que ver las venta con el empleado";
         }
+       public void Entrada_Sistema(int id)
+        {
+            Conexion.AbrirConexion();
+
+            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipousuario  FROM  empleados  WHERE id_empleado='" + id + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                NombreCompleto = data.GetString(0);
+                TUsuario = data.GetInt32(1);
+              
+
+            }
+            Conexion.CerrarConexion();
+        }
         #endregion
     }
     //clase administrativo deveria heredar de empleado tiene todo lo que necesita ...
@@ -259,20 +277,58 @@ namespace SalesSoft_v2.Recursos
 
     class Cliente : Persona
     {
-        #region Enum
-        enum etipoCliente
-        {
-            registrado,
-            noregistrado
-        }
-        #endregion
+        
         #region Campo
-        //        ring _numeroCliente;
-
+        int _id;
+        bool _tipocliente;
+        string _telefono;
+        string _direccion;
         #endregion
         #region Propiedades
-        public string NumeroCliente { get; set; }
-    //        public etipoCliente TipoCliente { get; set; }
+        public int ID
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
+        public bool TipoCliente
+        {
+            get
+            {
+                return _tipocliente;
+            }
+            set
+            {
+                _tipocliente = value;
+            }
+        }
+        public string Telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+            set
+            {
+                _telefono = value;
+            }
+        }
+        public string Direccion
+        {
+            get
+            {
+                return _direccion;
+            }
+            set
+            {
+                _direccion = value;
+            }
+        }
         #endregion 
          
         #region Constructor
@@ -286,6 +342,22 @@ namespace SalesSoft_v2.Recursos
         string Factura()
         {
             return "factura";
+        }
+        void ClienteID(int id)
+        {
+            Conexion.AbrirConexion();
+            MySqlCommand tabla = new MySqlCommand("SELECT nombrecompleto,tipocliente,direccion,telefono  FROM  clientes WHERE id_cliente='" + id + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                NombreCompleto = data.GetString(0);
+                TipoCliente =Convert.ToBoolean( data.GetString(1));
+                Direccion = data.GetString(2);
+                Telefono = data.GetString(3);
+
+            }
+            Conexion.CerrarConexion();
         }
         #endregion
     }

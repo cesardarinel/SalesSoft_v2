@@ -17,12 +17,11 @@
         </Grid.RowDefinitions>
 
         <GroupBox Name="AgregarDatos" Grid.Row="0" Header="Datos" VerticalAlignment="Top" Height="83" Grid.RowSpan="2" Margin="4,0,0,0" HorizontalAlignment="Left" Width="1159"/>
-        <Button Name="btAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="1168,10,0,0" VerticalAlignment="Top" Width="80" Height="73" Grid.RowSpan="2"/>
         <Button Grid.Row="2" Name="btnClose" Width="80" HorizontalAlignment="Right" Content="Cerrar" Click="btnClose_Click" />
         <Button Grid.Row="2" Name="btnCancelar" Width="80" Content="Cancelar" Margin="1083,0,85,0"/>
         <Button Grid.Row="2" Name="btnGuardar" Width="80" Content="Guardar" Margin="998,0,170,0" />
         <Button Grid.Row="2" Name="btnNuevo" Content="Nuevo Registro" HorizontalAlignment="Left" Width="100" Margin="6,0,0,0" />
-        <WindowsFormsHost Grid.Row="1" Margin="6,57,0,5">
+        <WindowsFormsHost Grid.Row="1" Margin="252,57,0,5">
             <WinForms:DataGridView x:Name="dgProductos">
             </WinForms:DataGridView>
         </WindowsFormsHost>

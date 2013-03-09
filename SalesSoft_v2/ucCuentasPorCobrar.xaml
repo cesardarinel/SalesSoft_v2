@@ -16,15 +16,41 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Name="AgregarDatos" Grid.Row="0" Header="Datos" VerticalAlignment="Top" Height="83" Grid.RowSpan="2" Margin="4,0,0,0" HorizontalAlignment="Left" Width="1245"/>
+        <GroupBox Name="AgregarDatos" Grid.Row="0" Header="Datos" VerticalAlignment="Top" Height="179" Grid.RowSpan="2" Margin="207,0,0,0" HorizontalAlignment="Left" Width="380"/>
 
         <Button Grid.Row="2" Name="btnClose" Width="80" HorizontalAlignment="Right" Content="Cerrar" Click="btnClose_Click" />
         <Button Grid.Row="1" Name="btnCancelar" Width="80" Content="Cancelar" Margin="1100,559,85,1" Grid.RowSpan="2"/>
-        <Button Grid.Row="2" Name="btnGuardar" Width="80" Content="Guardar" Margin="1083,0,85,0" />
-        <Button Grid.Row="2" Name="btnNuevo" Content="Nuevo Registro" HorizontalAlignment="Left" Width="100" Margin="6,0,0,0" />
-        <WindowsFormsHost Grid.Row="1" Margin="6,57,0,5">
-            <WinForms:DataGridView x:Name="dgProductos">
+
+        <WindowsFormsHost Margin="207,153,-1,5" Grid.Row="1">
+            <WinForms:DataGridView x:Name="dgFacturasIndividuales">
             </WinForms:DataGridView>
         </WindowsFormsHost>
+
+        <WindowsFormsHost Margin="6,65,1046,5" Grid.RowSpan="1" Grid.Row="1">
+            <WinForms:DataGridView x:Name="dgFacturasPendientes">
+            </WinForms:DataGridView>
+        </WindowsFormsHost>
+        <GroupBox Header="Filtrar Facturas" HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="196" Height="91"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="71,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="16,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="31"/>
+        <Button Content="Buscar" HorizontalAlignment="Left" Margin="111,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="31"/>
+        <Canvas HorizontalAlignment="Left" Height="150" Margin="217,18,0,0" VerticalAlignment="Top" Width="148" Grid.RowSpan="2">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/logo.jpg"/>
+            </Canvas.Background>
+        </Canvas>
+        <Label Content="Miembro No:" HorizontalAlignment="Left" Margin="370,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="370,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="370,49,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Direción" HorizontalAlignment="Left" Margin="370,80,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="455,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="455,52,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="455,83,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="455,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Total de Factura:" HorizontalAlignment="Left" Margin="370,111,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="473,111,0,0" Grid.Row="1" VerticalAlignment="Top" Width="102" FontWeight="Bold" FontSize="14" Height="26"/>
+        <Label Content="Total Acreditado por Cliente:" HorizontalAlignment="Left" Margin="953,10,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="285" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="953,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="285" FontSize="36" FontWeight="Bold" Foreground="Red" Background="Transparent"/>
     </Grid>
 </UserControl>

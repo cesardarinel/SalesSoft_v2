@@ -29,6 +29,6 @@
             <ComboBoxItem Content="Periféricos" Height="100" Width="100"/>
             <ComboBoxItem Content="Software" Height="100" Width="100"/>
         </ComboBox>
-        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Margin="313,0,0,0" VerticalAlignment="Top" Width="935" Height="199" Grid.RowSpan="2"/>
+        <GroupBox Header="Detalle de Producto" HorizontalAlignment="Left" Margin="313,0,0,0" VerticalAlignment="Top" Width="935" Height="199" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

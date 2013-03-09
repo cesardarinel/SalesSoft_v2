@@ -154,21 +154,37 @@ namespace SalesSoft_v2.Recursos
 
     class Empleado : Persona
     {
-        #region Enum
-        enum etipoEmpleado
-        {
-            facturador,
-            supervisor,
-            gerente,
-            administrador
-        };
-        #endregion
+        
         #region Campo
         string _idEmpleado;
         Decimal _sueldo;
         string _clave;
+        int _tusuario;
+        bool _activo;
         #endregion
         #region Propiedades
+        public bool Activo
+        {
+            get
+            {
+                return _activo;
+            }
+            set
+            {
+                _activo = value;
+            }
+        }
+        public int TUsuario
+        {
+            get
+            {
+                return _tusuario;
+            }
+            set
+            {
+                _tusuario = value;
+            }
+        }
         public string IdEmpleado
         {
             get

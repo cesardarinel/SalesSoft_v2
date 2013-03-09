@@ -74,7 +74,8 @@ namespace SalesSoft_v2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Proces.Visibility = System.Windows.Visibility.Visible;
-            Conexion.CerrarConexion();
+            Cancelar.IsEnabled = false;
+            Aceptar.IsEnabled = false;
             Conexion.AbrirConexion();
             Connection = false;
 
@@ -91,6 +92,8 @@ namespace SalesSoft_v2
             {
                 MessageBox.Show("Usuario o Contraseña Incorecto");
                 data.Close();
+                Cancelar.IsEnabled = true;
+                Aceptar.IsEnabled = true;
             }
 
             Conexion.CerrarConexion();

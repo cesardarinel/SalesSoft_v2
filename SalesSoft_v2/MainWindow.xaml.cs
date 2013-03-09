@@ -41,9 +41,8 @@ namespace SalesSoft_v2
 
         private void Entrada_al_Sistema()
         {
-           Empleado Entrada = new Empleado();
-             Entrada.Entrada_Sistema(Conexion.IdEntradaSistema);
-             this.Title = "SalesSoft | Tienda Informátia||   Hola :" + Entrada.NombreCompleto + "";
+           Empleado Entrada = new Empleado(Conexion.IdEntradaSistema);
+           this.Title = "SalesSoft | Tienda Informátia ||   Hola: " + Entrada.NombreCompleto + "";
             #region Tipos Usuarios
              switch (Entrada.TUsuario)
              {

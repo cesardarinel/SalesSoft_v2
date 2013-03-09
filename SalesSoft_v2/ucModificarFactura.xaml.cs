@@ -58,6 +58,8 @@ namespace SalesSoft_v2
             {
                 CloseInitiated(this, new EventArgs());
             }
+
+
         }
     }
 }

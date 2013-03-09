@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SalesSoft_v2.MainWindow" 
         WindowStartupLocation="CenterScreen" 
         Icon="Images/wizard.ico" 
-        Title="SalesSoft | Tienda Informátia" 
+        Title="SalesSoft | Tienda Informática" 
         ResizeMode="CanResizeWithGrip" 
         MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
         MinHeight="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"

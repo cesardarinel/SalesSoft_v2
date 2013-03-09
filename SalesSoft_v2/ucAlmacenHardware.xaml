@@ -16,15 +16,41 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Name="AgregarDatos" Grid.Row="0" Header="Datos" VerticalAlignment="Top" Height="83" Grid.RowSpan="2" Margin="4,0,0,0" HorizontalAlignment="Left" Width="1245"/>
+        <GroupBox Name="AgregarDatos" Grid.Row="1" Header="Detalle Producto" VerticalAlignment="Top" Height="340" Margin="4,161,0,0" HorizontalAlignment="Left" Width="221"/>
 
         <Button Grid.Row="2" Name="btnClose" Width="80" HorizontalAlignment="Right" Content="Cerrar" Click="btnClose_Click" />
         <Button Grid.Row="1" Name="btnCancelar" Width="80" Content="Cancelar" Margin="1100,559,85,1" Grid.RowSpan="2"/>
-        <Button Grid.Row="2" Name="btnGuardar" Width="80" Content="Guardar" Margin="1083,0,85,0" />
-        <Button Grid.Row="2" Name="btnNuevo" Content="Nuevo Registro" HorizontalAlignment="Left" Width="100" Margin="6,0,0,0" />
-        <WindowsFormsHost Grid.Row="1" Margin="6,57,0,5">
+        <WindowsFormsHost Margin="230,10,0,5" Grid.RowSpan="2">
             <WinForms:DataGridView x:Name="dgProductos">
             </WinForms:DataGridView>
         </WindowsFormsHost>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="115,459,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="31"/>
+        <GroupBox Header="Añadir Fabricante:" HorizontalAlignment="Left" Margin="4,10,0,0" VerticalAlignment="Top" Height="177" Width="221" Grid.RowSpan="2"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="10,31,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="RNC:" HorizontalAlignment="Left" Margin="10,62,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="74,35,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="74,4,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="74,66,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" />
+        <CheckBox Content="Ativo" HorizontalAlignment="Left" Margin="167,94,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Content="Agregar" HorizontalAlignment="Left" Margin="115,114,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="31"/>
+        <Button Content="Nuevo Registro" HorizontalAlignment="Left" Margin="12,114,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="31"/>
+        <Label Content="Fabricante:" HorizontalAlignment="Left" Margin="10,180,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,183,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <Label Content="Modelo:" HorizontalAlignment="Left" Margin="10,211,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,214,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="10,242,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,245,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <Label Content="No. Serie:" HorizontalAlignment="Left" Margin="12,273,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="12,304,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="12,366,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Estante:" HorizontalAlignment="Left" Margin="10,335,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,277,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,308,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,339,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="82,370,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <Label Content="Existencia Mínima:" HorizontalAlignment="Left" Margin="12,398,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="124,398,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
+        <Button Grid.Row="1" x:Name="btnNuevo" Content="Nuevo Registro" HorizontalAlignment="Left" Width="100" Margin="12,459,0,16" />
     </Grid>
 </UserControl>

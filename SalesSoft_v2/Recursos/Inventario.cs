@@ -10,9 +10,14 @@ namespace SalesSoft_v2.Recursos
     {
         #region Campos
         int _id;
+        string _fabricante;
+        string _modelo;
         string _nombre;
         string _numeroSerial;
         Decimal _precio;
+        int _cantidad;
+        int _estante;
+        int _tipo;
         #endregion
 
         #region Propiedades
@@ -25,6 +30,28 @@ namespace SalesSoft_v2.Recursos
             set
             {
                 _id = value;
+            }
+        }
+        public string Fabricante
+        {
+            get
+            {
+                return _fabricante;
+            }
+            set
+            {
+                _fabricante = value;
+            }
+        }
+        public string Modelo
+        {
+            get
+            {
+                return _modelo;
+            }
+            set
+            {
+                _modelo = value;
             }
         }
         public string Nombre  
@@ -60,12 +87,45 @@ namespace SalesSoft_v2.Recursos
                 _precio = value;
             }
         }
+        public int Cantidad
+        {
+            get
+            {
+                return _cantidad;
+            }
+            set
+            {
+                _cantidad = value;
+            }
+        }
+        public int Estante
+        {
+            get
+            {
+                return _estante;
+            }
+            set
+            {
+                _estante = value;
+            }
+        }
+        public int Tipo
+        {
+            get
+            {
+                return _tipo;
+            }
+            set
+            {
+                _tipo = value;
+            }
+        }
         #endregion
 
         #region Constructores
         public Producto()
         {
-
+            
         }
         #endregion
 
@@ -86,7 +146,7 @@ namespace SalesSoft_v2.Recursos
         #region Constructores
         public Hardware()
         {
-
+            Tipo = 1;
         }
         #endregion
 
@@ -104,7 +164,7 @@ namespace SalesSoft_v2.Recursos
         #region Constructores
         public Periferico()
         {
-
+            Tipo = 2;
         }
         #endregion
 
@@ -122,7 +182,7 @@ namespace SalesSoft_v2.Recursos
         #region Constructores
         public Software()
         {
-
+            Tipo = 3;
         }
         #endregion
 

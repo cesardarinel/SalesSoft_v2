@@ -13,7 +13,7 @@ namespace SalesSoft_v2.Recursos
         int _id;
         string _nombre;
         string _telefono;
-        string _estado;
+        bool _estado;
         #endregion
         #region Propiedades
        
@@ -50,7 +50,7 @@ namespace SalesSoft_v2.Recursos
                 _telefono = value;
             }
         }
-        public string Estado
+        public bool Estado
         {
             get
             {

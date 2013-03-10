@@ -98,8 +98,9 @@ namespace SalesSoft_v2
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
+            Conexion.CerrarConexion();
             Connection = false;
-            this.DialogResult = true;
+            this.DialogResult = false;
         }
     }
 }

@@ -188,7 +188,7 @@ namespace SalesSoft_v2
 
                 Conexion.CerrarConexion();
                 Conexion.AbrirConexion();
-                MySqlCommand preguntar = new MySqlCommand("SELECT * FROM empleados WHERE id_empleado = '" + (dgUsuario.CurrentRow.Index + 1) + "'", Conexion.varConexion);
+                MySqlCommand preguntar = new MySqlCommand("SELECT * FROM empleados WHERE id_empleado = '" + vol + "'", Conexion.varConexion);
 
                 MySqlDataReader leopregunta = preguntar.ExecuteReader();
                 
@@ -209,9 +209,10 @@ namespace SalesSoft_v2
                         tbClave.Text = null;
                         tbCedula.Text = null;
                         tbSueldo.Text = null;
-                        nuevo = false;
+                       
                         Inicio(false);
-                        MostrarTablas();
+                        MostrarTablas(); 
+                        nuevo = false;
                     }
                     finally
                     {
@@ -222,6 +223,7 @@ namespace SalesSoft_v2
                     return;
                 }
             }
+
             Conexion.CerrarConexion();
             Conexion.AbrirConexion();
             MySqlCommand preguntar1 = new MySqlCommand("SELECT * FROM empleados WHERE nombreusuario = '" + Empleado.Nombre + "'", Conexion.varConexion);
@@ -269,24 +271,30 @@ namespace SalesSoft_v2
         {
 
             Inicio(true);
-            
+            Conexion.CerrarConexion();
             Conexion.AbrirConexion();
             MySqlCommand tabla = new MySqlCommand("SELECT tipousuario,nombreusuario,clave,nombrecompleto,cedula,telefono,sueldo,estado  FROM  empleados WHERE id_empleado='" + (dgUsuario.CurrentRow.Cells[0].Value) + "'", Conexion.varConexion);
             MySqlDataReader data = tabla.ExecuteReader();
             while (data.Read())
             {
-                
-                cbTUsuario.Text = data.GetString(0);
+                nuevo = true;
+                cbTUsuario.SelectedIndex = data.GetInt32(0);
                 tbNombre.Text = data.GetString(1);
                 tbClave.Text = data.GetString(2);
                 tbNombreCompleto.Text = data.GetString(3);
-                
                 tbCedula.Text = data.GetString(4);
                 tbTelefono.Text = data.GetString(5);
                 tbSueldo.Text = data.GetString(6);
-               
+                if (data.GetInt32(7) == 1)
+                {
+                    cbActivo.IsChecked = true;
+                }
+                else
+                {
+                    cbActivo.IsChecked = false;
+                }
                 vol = Convert.ToInt32(dgUsuario.CurrentRow.Cells[0].Value);
-                nuevo = true;
+               
 
             } 
             Conexion.CerrarConexion();
@@ -307,7 +315,7 @@ namespace SalesSoft_v2
 
         private void Cancelar(object sender, RoutedEventArgs e)
         {
-            nuevo = false;
+            
             tbNombre.Text = null;
             tbNombreCompleto.Text = null;
             tbTelefono.Text = null;

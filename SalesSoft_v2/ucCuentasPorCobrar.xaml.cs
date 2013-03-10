@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SalesSoft_v2.Recursos;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace SalesSoft_v2
 {
@@ -63,6 +66,35 @@ namespace SalesSoft_v2
         private void Limpiar(object sender, RoutedEventArgs e)
         {
             tbNombred.Text = null;
+        }
+
+        private void Buscar(object sender, RoutedEventArgs e)
+        {
+            int usuario;
+            
+            Conexion.CerrarConexion();
+            Conexion.AbrirConexion();
+            ///agregamos la base de datos a la pantalla 
+            ///
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT id_ciente FROM clientes WHERE   nombrecompleto= '"+ tbNombred.Text+"' ", Conexion.varConexion);
+            MySqlDataReader data = da.ExecuteReader();
+
+            while (data.Read())
+            {
+                usuario = data.GetInt32(0);
+
+            }
+            Conexion.CerrarConexion();
+            Conexion.AbrirConexion();
+            ///agregamos la base de datos a la pantalla 
+            ///
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT* FROM facturas WHERE ", Conexion.varConexion);
+
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+            dgFacturasPendientes.DataSource = dt.Tables[0];
+            Conexion.CerrarConexion();
+        
         }
     }
 }

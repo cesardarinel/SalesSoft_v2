@@ -59,5 +59,10 @@ namespace SalesSoft_v2
                 CloseInitiated(this, new EventArgs());
             }
         }
+
+        private void Limpiar(object sender, RoutedEventArgs e)
+        {
+            tbNombred.Text = null;
+        }
     }
 }

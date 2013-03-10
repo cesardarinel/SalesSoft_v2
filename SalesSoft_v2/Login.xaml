@@ -1,7 +1,7 @@
 ﻿<Window x:Class="SalesSoft_v2.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Entrada Al Sistema " Height="319.896" Width="228.574" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None">
+        Title="Entrada Al Sistema " Height="319.896" Width="228.574" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None" VerticalContentAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="False" BorderBrush="Black">
     <Grid Margin="0,0,10,1">
         <ProgressBar Height="30" HorizontalAlignment="Left" Margin="10,275,0,0" Name="Proces" VerticalAlignment="Top" Width="203" />
         <PasswordBox x:Name="contrasena" HorizontalAlignment="Left" Height="23" Margin="89,222,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.667,0.435" Password="123"/>

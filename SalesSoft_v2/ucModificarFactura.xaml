@@ -58,9 +58,11 @@
             </Canvas.Background>
         </Canvas>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="572,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+
         <Label Content="Cliente:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Grid.Row="1"/>
         <Label Content="Dirección: " HorizontalAlignment="Left" Margin="10,87,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Grid.Row="1"/>
         <Label Content="Miembro No:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+
     </Grid>
 </UserControl>

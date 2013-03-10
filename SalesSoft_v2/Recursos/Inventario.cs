@@ -165,12 +165,33 @@ namespace SalesSoft_v2.Recursos
     class Periferico : Producto
     {
         #region Campos
-        int cantidad;
-        int estante;
+        int _cantidad;
+        int _estante;
         #endregion
 
         #region Propiedades
-
+        public int Estante
+        {
+            get
+            {
+                return _estante;
+            }
+            set
+            {
+                _estante = value;
+            }
+        }
+        public int Cantidad
+        {
+            get
+            {
+                return _cantidad;
+            }
+            set
+            {
+                _cantidad = value;
+            }
+        }
         #endregion
 
         #region Constructores
@@ -185,12 +206,33 @@ namespace SalesSoft_v2.Recursos
     class Software : Producto
     {
         #region Campos
-        int cantidad;
-        int estante;
+        int _cantidad;
+        int _estante;
         #endregion
 
         #region Propiedades
-
+        public int Estante
+        {
+            get
+            {
+                return _estante;
+            }
+            set
+            {
+                _estante = value;
+            }
+        }
+        public int Cantidad
+        {
+            get
+            {
+                return _cantidad;
+            }
+            set
+            {
+                _cantidad = value;
+            }
+        }
         #endregion
 
         #region Constructores

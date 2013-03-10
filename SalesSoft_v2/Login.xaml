@@ -10,7 +10,7 @@
         <Label Content="Usuario:" HorizontalAlignment="Left" Margin="31,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.713,-0.471"/>
         <TextBox x:Name="textUsuario" HorizontalAlignment="Left" Height="23" Margin="89,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.175,0.478" Text="Cesar"/>
         <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="12,218,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.227,-0.365"/>
-        <Image Height="175" Margin="10,10,0,0" VerticalAlignment="Top" Source="Images/logo.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="203"/>
+        <Image Height="175" Margin="10,10,0,0" VerticalAlignment="Top" Source="Images\logo.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="203"/>
 
     </Grid>
 </Window>

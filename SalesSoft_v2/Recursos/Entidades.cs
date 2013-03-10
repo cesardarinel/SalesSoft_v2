@@ -361,6 +361,7 @@ namespace SalesSoft_v2.Recursos
 
 
             }
+            ID = id;
             Conexion.CerrarConexion();
 
         }

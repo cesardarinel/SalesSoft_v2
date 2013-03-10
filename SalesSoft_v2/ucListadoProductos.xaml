@@ -29,6 +29,26 @@
             <ComboBoxItem Content="Periféricos" Height="100" Width="100"/>
             <ComboBoxItem Content="Software" Height="100" Width="100"/>
         </ComboBox>
-        <GroupBox Header="Detalle de Producto" HorizontalAlignment="Left" Margin="313,0,0,0" VerticalAlignment="Top" Width="935" Height="199" Grid.RowSpan="2"/>
+        <GroupBox Header="Detalle de Producto" HorizontalAlignment="Left" Margin="313,0,0,0" VerticalAlignment="Top" Width="591" Height="122" Grid.RowSpan="2"/>
+        <Label Content="Fabricante:" HorizontalAlignment="Left" Margin="320,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="Modelo:" HorizontalAlignment="Left" Margin="320,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="517,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="No. Serie:" HorizontalAlignment="Left" Margin="517,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Precio:" HorizontalAlignment="Left" Margin="517,49,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Estante:" HorizontalAlignment="Left" Margin="707,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="707,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="392,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="392,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,52,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="772,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="772,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <WebBrowser HorizontalAlignment="Left" Height="400" Margin="320,96,0,0" Grid.Row="1" VerticalAlignment="Top" Width="928"/>
+        <Canvas HorizontalAlignment="Left" Height="112" Margin="909,10,0,0" VerticalAlignment="Top" Width="329" Grid.RowSpan="2">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/logo.jpg" Stretch="Uniform"/>
+            </Canvas.Background>
+        </Canvas>
     </Grid>
 </UserControl>

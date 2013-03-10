@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:WinForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             xmlns:winform="clr-namespace:CrystalDecisions.Windows.Forms;assembly=CrystalDecisions.Windows.Forms"
              mc:Ignorable="d" 
              Height="570"
         	 Width="1248"
@@ -16,15 +16,19 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Name="AgregarDatos" Grid.Row="0" Header="Datos" VerticalAlignment="Top" Height="83" Grid.RowSpan="2" Margin="4,0,0,0" HorizontalAlignment="Left" Width="1245"/>
+        <GroupBox Name="AgregarDatos" Grid.Row="0" Header="Tipos de Reporte" Grid.RowSpan="2" Margin="4,0,0,8" HorizontalAlignment="Left" Width="139"/>
+
+        <WindowsFormsHost Name="WindowsFormHost" HorizontalAlignment="Left" Height="517" VerticalAlignment="Top" Width="1096" Grid.RowSpan="2" Margin="152,10,0,0">
+            <winform:CrystalReportViewer x:Name="rptViewer" ToolPanelView="None" EnableToolTips="False" ShowCloseButton="False" />
+        </WindowsFormsHost>
 
         <Button Grid.Row="2" Name="btnClose" Width="80" HorizontalAlignment="Right" Content="Cerrar" Click="btnClose_Click" />
         <Button Grid.Row="1" Name="btnCancelar" Width="80" Content="Cancelar" Margin="1100,559,85,1" Grid.RowSpan="2"/>
-        <Button Grid.Row="2" Name="btnGuardar" Width="80" Content="Guardar" Margin="1083,0,85,0" />
-        <Button Grid.Row="2" Name="btnNuevo" Content="Nuevo Registro" HorizontalAlignment="Left" Width="100" Margin="6,0,0,0" />
-        <WindowsFormsHost Grid.Row="1" Margin="6,57,0,5">
-            <WinForms:DataGridView x:Name="dgProductos">
-            </WinForms:DataGridView>
-        </WindowsFormsHost>
+        <Button Content="Reporte Hardware" HorizontalAlignment="Left" Margin="12,22,0,0" VerticalAlignment="Top" Width="122" Height="30" Grid.RowSpan="2"/>
+        <Button Content="Reporte Software" HorizontalAlignment="Left" Margin="12,26,0,0" VerticalAlignment="Top" Width="122" Height="30" Grid.Row="1"/>
+        <Button Content="Reporte Periféricos" HorizontalAlignment="Left" Margin="12,61,0,0" VerticalAlignment="Top" Width="122" Grid.Row="1" Height="30"/>
+        <Button Content="Reporte Facturas" HorizontalAlignment="Left" Margin="12,96,0,0" VerticalAlignment="Top" Width="122" Grid.Row="1" Height="30"/>
+        <Button Content="Reporte CXC" HorizontalAlignment="Left" Margin="12,131,0,0" VerticalAlignment="Top" Width="122" Grid.Row="1" Height="30"/>
+        <Button Content="¿Algún Otro? -.-" HorizontalAlignment="Left" Margin="12,166,0,0" VerticalAlignment="Top" Width="122" Grid.Row="1" Height="30"/>
     </Grid>
 </UserControl>

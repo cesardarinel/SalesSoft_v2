@@ -58,6 +58,9 @@
             </Canvas.Background>
         </Canvas>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="572,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 266547a12c43b71202e81867fc9db74df801f329
     </Grid>
 </UserControl>

@@ -15,7 +15,7 @@
         </ImageBrush>
     </Window.Background>
     <Grid Margin="0,0,28,0">
-        <ProgressBar Height="30" HorizontalAlignment="Left" Margin="204,405,0,0" Name="Proces" VerticalAlignment="Top" Width="203" />
+        <ProgressBar Height="30" HorizontalAlignment="Left" Margin="138,275,0,0" Name="Proces" VerticalAlignment="Top" Width="203" />
         <PasswordBox x:Name="contrasena" HorizontalAlignment="Left" Height="23" Margin="283,352,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.667,0.435" Password="123"/>
         <Button Name="Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="332,380,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsDefault="True"/>
         <Button x:Name="Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="252,380,0,0" VerticalAlignment="Top" Width="75" Click="Cancelar_Click"/>

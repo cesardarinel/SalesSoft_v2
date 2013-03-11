@@ -22,7 +22,7 @@
         <Button Grid.Row="1" Name="btnCancelar" Width="80" Content="Cancelar" Margin="1100,559,85,1" Grid.RowSpan="2"/>
 
         <WindowsFormsHost Margin="207,153,-1,5" Grid.Row="1">
-            <WinForms:DataGridView x:Name="dgFacturasIndividuales">
+            <WinForms:DataGridView x:Name="dgFacturasIndividuales" Click="dgFacturasIndividuales_Click">
             </WinForms:DataGridView>
         </WindowsFormsHost>
 

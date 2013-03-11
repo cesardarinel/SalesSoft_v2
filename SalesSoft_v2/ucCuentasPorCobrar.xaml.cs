@@ -141,7 +141,7 @@ namespace SalesSoft_v2
             tbDireccion.Text =verFactiura.Direccion;
 
 
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM facturas WHERE   pagada= '" + 0 + "' AND cliente= '" + verFactiura.ID + "'", Conexion.varConexion);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM facturas WHERE   pagada= '" + 1 + "' AND cliente= '" + verFactiura.ID + "'", Conexion.varConexion);
             DataSet dt = new DataSet();
             
             da.Fill(dt);
@@ -151,11 +151,11 @@ namespace SalesSoft_v2
             label1.Content = "";
             lbPrecio.Content = "";
             int i = 0;
-            while(dt.Tables.Count>=i)
+            while(dt.Tables[0].Rows.Count > i)
             {
 
                 
-                Total += Label_Deuda(Convert.ToInt32(dt.Tables[0].Rows[0][i]));
+                Total += Convert.ToInt32(dt.Tables[0].Rows[i][9]);
                i++;
             }
 
@@ -166,12 +166,8 @@ namespace SalesSoft_v2
         private void dgFacturasIndividuales_Click(object sender, EventArgs e)
         {
             Conexion.CerrarConexion();
-            Conexion.AbrirConexion();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM totalfactura WHERE   factura= '" + dgFacturasIndividuales.CurrentRow.Cells[0].Value + "' ", Conexion.varConexion);
-            DataSet dt = new DataSet();
-            da.Fill(dt);
-           
-           label1.Content= "RD $"+dt.Tables[0].Rows[0][2];
+
+            label1.Content = "RD $" + dgFacturasIndividuales.Rows[dgFacturasIndividuales.CurrentRow.Index].Cells[ 9 ].Value;
            Conexion.CerrarConexion();
         }
     }

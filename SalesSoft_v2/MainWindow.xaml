@@ -4,7 +4,7 @@
         xmlns:r="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="SalesSoft_v2.MainWindow" 
         WindowStartupLocation="CenterScreen" 
-        Icon="Images/wizard.ico" 
+        Icon="Images\Sticky Notes.png" 
         Title="SalesSoft | Tienda Informática" 
         ResizeMode="CanResizeWithGrip" 
         MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
@@ -20,25 +20,25 @@
 
             <RibbonTab Name="Facturaciones" Header="Facturación">
                 <RibbonGroup>
-                    <RibbonButton x:Name="facturar" Label="Facturar" LargeImageSource="Images/friends_group.ico" Click="facturar_Click" />
-                    <RibbonButton x:Name="cuentasPorCobrar" Label="Cuentas Por Cobrar" LargeImageSource="Images/credit_card.ico" Click="cuentasPorCobrar_Click" />
-                    <RibbonButton x:Name="listadoProductos" Label="Listado de Productos" LargeImageSource="Images/trash_box_2.ico" Click="listadoProductos_Click" />
+                    <RibbonButton x:Name="facturar" Label="Facturar" LargeImageSource="Images\Calculator.png" Click="facturar_Click" />
+                    <RibbonButton x:Name="cuentasPorCobrar" Label="Cuentas Por Cobrar" LargeImageSource="Images\Pin.png" Click="cuentasPorCobrar_Click" />
+                    <RibbonButton x:Name="listadoProductos" Label="Listado de Productos" LargeImageSource="Images\System.png" Click="listadoProductos_Click" />
                 </RibbonGroup>
             </RibbonTab>
 
             <RibbonTab Name="Inventarios" Header="Inventario">
                 <RibbonGroup>
-                    <RibbonButton x:Name="almacenHardware" Label="Hardware" LargeImageSource="Images/forward.ico" Click="almacenHardware_Click" />
-                    <RibbonButton x:Name="almacenSoftware" Label="Software" LargeImageSource="Images/forward.ico" Click="almacenSoftware_Click" />
-                    <RibbonButton x:Name="almacenPerifericos" Label="Periféricos" LargeImageSource="Images/forward.ico" Click="almacenPerifericos_Click"  />
+                    <RibbonButton x:Name="almacenHardware" Label="Hardware" LargeImageSource="Images\Services.png" Click="almacenHardware_Click" />
+                    <RibbonButton x:Name="almacenSoftware" Label="Software" LargeImageSource="Images\Programs.png" Click="almacenSoftware_Click" />
+                    <RibbonButton x:Name="almacenPerifericos" Label="Periféricos" LargeImageSource="Images\Network Drive Connected.png" Click="almacenPerifericos_Click"  />
                 </RibbonGroup>
             </RibbonTab>
 
             <RibbonTab Name="admin"  Header="Administración">
                 <RibbonGroup>
-                    <RibbonButton x:Name="agregarUsuarios" Label="Agregar Usuarios" LargeImageSource="Images/record.ico" Click="agregarUsuarios_Click" />
-                    <RibbonButton x:Name="generarReporte" Label="Reportes" LargeImageSource="Images/record.ico" Click="generarReporte_Click"  />
-                    <RibbonButton x:Name="modificarFactura" Label="Modificar Factura" LargeImageSource="Images/record.ico" Click="modificarFactura_Click" />
+                    <RibbonButton x:Name="agregarUsuarios" Label="Agregar Usuarios" LargeImageSource="Images\User Accounts.png" Click="agregarUsuarios_Click" />
+                    <RibbonButton x:Name="generarReporte" Label="Reportes" LargeImageSource="Images\Folder Options.png" Click="generarReporte_Click"  />
+                    <RibbonButton x:Name="modificarFactura" Label="Modificar Factura" LargeImageSource="Images\Documents Folder.png" Click="modificarFactura_Click" />
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>

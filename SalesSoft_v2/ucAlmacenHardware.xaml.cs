@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Windows.Controls;
 using MySql.Data.MySqlClient;
 using SalesSoft_v2.Recursos;
 using System.Data;
@@ -26,6 +28,9 @@ namespace SalesSoft_v2
         int vol;
         bool nuevo = false;
         Decimal Maximo;
+
+        StringCollection coleccionNombres = new StringCollection();
+
         public ucAlmacenHardware()
         {
             InitializeComponent();
@@ -334,6 +339,19 @@ namespace SalesSoft_v2
             Conexion.CerrarConexion();
         }
 
-       
+        private void tbAssembly_Populating(object sender, System.Windows.Controls.PopulatingEventArgs e)
+        {
+            Conexion.AbrirConexion();
+            MySqlCommand cmd = new MySqlCommand("SELECT nombrefabricante from fabrcantes", Conexion.varConexion);
+            MySqlDataReader data = cmd.ExecuteReader();
+            while (data.Read())
+            {
+               
+                coleccionNombres.Add(data.GetString(1));
+            }
+
+            tbAssembly.ItemsSource = coleccionNombres;
+            tbAssembly.PopulateComplete();
+        }
     }
 }

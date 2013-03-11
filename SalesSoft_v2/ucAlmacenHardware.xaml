@@ -2,6 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:WinForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
              mc:Ignorable="d" 
@@ -51,5 +52,6 @@
         <Label Content="Existencia Mínima:" HorizontalAlignment="Left" Margin="12,398,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <TextBox Name="tbExistenciaMin" HorizontalAlignment="Left" Height="23" Margin="124,398,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
         <Button Grid.Row="1" x:Name="btnNuevo" Content="Nuevo Registro" HorizontalAlignment="Left" Width="100" Margin="12,459,0,16" Click="RegistrarProducto" />
+        <toolkit:AutoCompleteBox ToolTip="Enter the path of an assembly." x:Name="tbAssembly" Height="27" Width="102" Populating="tbAssembly_Populating" Margin="115,161,1031,318" Grid.Row="1" />
     </Grid>
 </UserControl>

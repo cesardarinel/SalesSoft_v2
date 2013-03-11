@@ -97,8 +97,10 @@ namespace SalesSoft_v2
         }
 
         private void Buscar(object sender, RoutedEventArgs e)
-        {   Conexion.CerrarConexion();
+        {   
+            Conexion.CerrarConexion();
             Conexion.AbrirConexion();
+            
             if (tbNombred.Text == string.Empty || tbID.Text != string.Empty)
             {
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT nombrecompleto,id_cliente FROM clientes WHERE  id_cliente= '" + tbID.Text + "' ", Conexion.varConexion);
@@ -109,7 +111,9 @@ namespace SalesSoft_v2
                 return;
 
             }
-            else { 
+            
+            else 
+            { 
             /////agregamos la base de datos a la pantalla 
             /////
             MySqlDataAdapter da = new MySqlDataAdapter("SELECT nombrecompleto,id_cliente FROM clientes WHERE   nombrecompleto= '" + tbNombred.Text + "' ", Conexion.varConexion);
@@ -118,7 +122,6 @@ namespace SalesSoft_v2
             dgFacturasPendientes.DataSource = dt.Tables[0];
             Conexion.CerrarConexion();
             return;
-            
             }
             MessageBox.Show("El campo nombre Y ID Cliente vacío, porfavor llenar uno de ellos");
             return;

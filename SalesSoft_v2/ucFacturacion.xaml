@@ -21,12 +21,12 @@
         <Button Grid.Row="2" Name="btnClose" Width="80" HorizontalAlignment="Right" Content="Cerrar" Click="btnClose_Click" />
         <Button Grid.Row="1" Name="btnCancelar" Width="80" Content="Cancelar" Margin="1100,559,85,1" Grid.RowSpan="2"/>
         <Button Grid.Row="2" Name="btnGuardar" Width="80" Content="Facturar" Margin="1083,0,85,0" />
-        <WindowsFormsHost Grid.Row="1" Margin="6,57,0,16">
+        <WindowsFormsHost Grid.Row="1" Margin="6,57,235,16">
             <WinForms:DataGridView x:Name="dgProductos">
             </WinForms:DataGridView>
         </WindowsFormsHost>
-        <Label Content="Total a Pagar: $" HorizontalAlignment="Left" Margin="10,495,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Grid.RowSpan="2"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="143,495,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="2" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Total a Pagar:" HorizontalAlignment="Left" Margin="1028,57,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="1028,96,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="125"/>
         <Label Content="Cliente:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
         <Label Content="Dirección: " HorizontalAlignment="Left" Margin="10,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="205,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
@@ -65,5 +65,11 @@
         </ComboBox>
         <Label Content="Forma de Pago:" HorizontalAlignment="Left" Margin="1024,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
         <CheckBox Content="A crédito" HorizontalAlignment="Left" Margin="1028,24,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Pago:" HorizontalAlignment="Left" Margin="1028,147,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Devuelta:" HorizontalAlignment="Left" Margin="1028,214,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="1028,186,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="1028,253,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="125"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="1028,96,0,0" Grid.Row="1" VerticalAlignment="Top" Width="210"/>
+        <Label Content="Fecha de Hoy: " HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

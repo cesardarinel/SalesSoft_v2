@@ -70,7 +70,7 @@ namespace SalesSoft_v2
             Conexion.CerrarConexion();
             Conexion.AbrirConexion();
             ///agregamos la base de datos a la pantalla 
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM productos WHERE tipo='"+cbTipo.SelectedIndex+1+"' ", Conexion.varConexion);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM productos WHERE tipo='"+(cbTipo.SelectedIndex+1) +"' ", Conexion.varConexion);
 
             DataSet dt = new DataSet();
             da.Fill(dt);

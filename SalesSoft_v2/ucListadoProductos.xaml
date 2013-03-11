@@ -16,18 +16,15 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Button Grid.Row="2" Name="btnClose" Width="80" HorizontalAlignment="Right" Content="Cerrar" Click="btnClose_Click" />
-        <Button Grid.Row="2" Name="btnCancelar" Width="80" Content="Cancelar" Margin="1083,0,85,0"/>
-        <Button Grid.Row="2" Name="btnGuardar" Width="80" Content="Guardar" Margin="998,0,170,0" />
-        <Button Grid.Row="2" Name="btnNuevo" Content="Nuevo Registro" HorizontalAlignment="Left" Width="100" Margin="6,0,0,0" />
         <WindowsFormsHost Grid.Row="1" Margin="10,4,940,10">
-            <WinForms:DataGridView x:Name="dgProductos">
+            <WinForms:DataGridView x:Name="dgProductos" Click="dgProductos_Click">
             </WinForms:DataGridView>
         </WindowsFormsHost>
         <Label Content="Tipo de Producto:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="119,9,0,0" VerticalAlignment="Top" Width="189">
-            <ComboBoxItem Content="Hardware" Height="100" Width="100"/>
-            <ComboBoxItem Content="Periféricos" Height="100" Width="100"/>
-            <ComboBoxItem Content="Software" Height="100" Width="100"/>
+        <ComboBox Name="cbTipo" HorizontalAlignment="Left" Margin="119,0,0,1" VerticalAlignment="Bottom" Width="189" SelectionChanged="cbTipo_SelectionChanged">
+            <ComboBoxItem Content="Hardware"/>
+            <ComboBoxItem Content="Periféricos"/>
+            <ComboBoxItem Content="Software" />
         </ComboBox>
         <GroupBox Header="Detalle de Producto" HorizontalAlignment="Left" Margin="313,0,0,0" VerticalAlignment="Top" Width="591" Height="122" Grid.RowSpan="2"/>
         <Label Content="Fabricante:" HorizontalAlignment="Left" Margin="320,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
@@ -37,14 +34,14 @@
         <Label Content="Precio:" HorizontalAlignment="Left" Margin="517,49,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Estante:" HorizontalAlignment="Left" Margin="707,18,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
         <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="707,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="392,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="392,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="582,52,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="772,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="772,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
-        <WebBrowser HorizontalAlignment="Left" Height="400" Margin="320,96,0,0" Grid.Row="1" VerticalAlignment="Top" Width="928"/>
+        <TextBox Name="tbFAbricante" HorizontalAlignment="Left" Height="23" Margin="392,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <TextBox Name="tbModelo" HorizontalAlignment="Left" Height="23" Margin="392,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbNombreP" HorizontalAlignment="Left" Height="23" Margin="582,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <TextBox Name="tbNSerial" HorizontalAlignment="Left" Height="23" Margin="582,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbPrecio" HorizontalAlignment="Left" Height="23" Margin="582,52,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbCantidad" HorizontalAlignment="Left" Height="23" Margin="772,21,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbEstante" HorizontalAlignment="Left" Height="23" Margin="772,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+        <WebBrowser Name="wbWIKIPEDIA" HorizontalAlignment="Left" Height="400" Margin="320,96,0,0" Grid.Row="1" VerticalAlignment="Top" Width="928"/>
         <Canvas HorizontalAlignment="Left" Height="112" Margin="909,10,0,0" VerticalAlignment="Top" Width="329" Grid.RowSpan="2">
             <Canvas.Background>
                 <ImageBrush ImageSource="Images/logo.jpg" Stretch="Uniform"/>

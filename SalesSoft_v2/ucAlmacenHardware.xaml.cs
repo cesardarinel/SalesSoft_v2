@@ -196,7 +196,7 @@ namespace SalesSoft_v2
             Nuevo_hadware.Modelo = tbModelo.Text;
             if (tbNombreP.Text == string.Empty || tbNombreP.Text.Length > 10)
             {
-                MessageBox.Show("El campo Nombre esta vacío, porfavor llene con un Nombre ó tienes mas de 10 caracteres");
+                MessageBox.Show("El campo Nombre  esta vacío, porfavor llene con un Nombre ó tienes mas de 10 caracteres");
                 return;
             }
             Nuevo_hadware.Nombre = tbNombreP.Text;

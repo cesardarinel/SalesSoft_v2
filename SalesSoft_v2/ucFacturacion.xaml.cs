@@ -25,9 +25,13 @@ namespace SalesSoft_v2
     /// </summary>
     public partial class ucFacturacion : UserControl, iTabbedMDI
     {
+        DataTable dt = new DataTable(); //creas una tabla
         public ucFacturacion()
         {
             InitializeComponent();
+            dt.Columns.Add("Producto"); //le creas las columnas
+            dt.Columns.Add("Precio");
+            dt.Columns.Add("Cantidad"); 
         }
         #region AgregarCliente
         private void Procesar(object sender, RoutedEventArgs e)
@@ -48,7 +52,7 @@ namespace SalesSoft_v2
         {
             if (tbNMienbro.Text != string.Empty)
             {
-                MessageBox.Show("El campo N Miembro  esta Lleno, Puede Procesar el Cliente");
+                MessageBox.Show("El campo N Miembro  esta Lleno, No  Puede Cargar el Cliente");
                 return;
             }
             Cliente Cliente_nuevo = new Cliente();
@@ -137,6 +141,82 @@ namespace SalesSoft_v2
             {
                 CloseInitiated(this, new EventArgs());
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int tipo = 0;
+            if (tbNombre.Text == string.Empty || tbDireccion.Text == string.Empty || tbNMienbro.Text == string.Empty)
+            {
+                MessageBox.Show("El un campo del Cliente esta vacío, porfavor llenar ");
+                return;
+            }
+            if (tbCantidad.Text == string.Empty )
+            {
+                MessageBox.Show("El campo Cantidad esta vacío, porfavor llenar ");
+                return;
+            }
+            Conexion.AbrirConexion();
+            MySqlCommand tabla = new MySqlCommand("SELECT tipo  FROM  productos WHERE nombreproducto='" + tbNombreP.Text+ "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+                tipo=data.GetInt32(0);
+            }
+            Conexion.CerrarConexion();
+            switch (tipo)
+            {
+                case 1:
+                    Hardware comprarH = new Hardware(tbNombreP.Text);
+                    tbPrecio.Text=Convert.ToString( comprarH.Precio);
+                    
+                    
+                    DataRow row = dt.NewRow(); //creas un registro
+                 
+                    dt.Rows.Add(row); //añades el registro a la tabla
+                    dgProductos.DataSource = dt; //añades la tabla al datagrid
+                    dgProductos.Update(); //actualizas
+                    break;
+                case 2:
+                    Software comprars = new Software(tbNombreP.Text);
+                    tbPrecio.Text=Convert.ToString( comprars.Precio);
+                  
+                    
+                    DataRow rows = dt.NewRow(); //creas un registro
+                    rows["Producto"] = comprars.Nombre; //Le añadres un valor
+                    rows["Precio"] = comprars.Precio;
+                    rows["Cantidad"] = tbCantidad.Text;
+                    dt.Rows.Add(rows); //añades el registro a la tabla
+                    dgProductos.DataSource = dt; //añades la tabla al datagrid
+                    dgProductos.Update(); //actualizas
+                    break;
+                case 3:
+                    Periferico comprarp = new Periferico(tbNombreP.Text);
+                    tbPrecio.Text=Convert.ToString( comprarp.Precio);
+                   
+                  
+                    DataRow rowp = dt.NewRow(); //creas un registro
+                    rowp["Producto"] = comprarp.Nombre; //Le añadres un valor
+                    rowp["Precio"] = comprarp.Precio;
+                    rowp["Cantidad"] = tbCantidad.Text;
+                    dt.Rows.Add(rowp); //añades el registro a la tabla
+                    dgProductos.DataSource = dt; //añades la tabla al datagrid
+                    dgProductos.Update(); //actualizas
+                    break;
+               
+                default:
+                    break;
+            }
+            
+        }
+
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            for (int a = 0; a < dgProductos.RowCount;a++ )
+            {
+
+            }
+
         }
 
         

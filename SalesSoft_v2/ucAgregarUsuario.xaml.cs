@@ -238,7 +238,7 @@ namespace SalesSoft_v2
 
             Conexion.CerrarConexion();
             Conexion.AbrirConexion();
-
+           
             MySqlCommand agregarEmpleado = new MySqlCommand
                 ("INSERT INTO empleados (tipousuario,nombreusuario,clave ,nombrecompleto ,cedula,telefono,sueldo,estado) VALUES('"
                 + Empleado.TUsuario + "','" + Empleado.Nombre + "','" + Empleado.Clave + "','" + Empleado.NombreCompleto + "','" + Empleado.Cedula

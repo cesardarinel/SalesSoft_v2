@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SalesSoft_v2.App" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.CrystalReport1" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAJAAAQAAAAAAAIAAAAAAAAAAAACAABAAAABAA=</HashCode>
+      <FileName>CrystalReport1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.CachedCrystalReport1" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAFAEAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CrystalReport1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.Login" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAgAAAAEAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Login.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.MainWindow" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAABgAABgEAAEAABAAABAAAgACACAAAAAAAAgA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.ucAgregarUsuario" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAkAAAAAAACIAAAAAQAAhAAgAIIAAAAQ=</HashCode>
+      <FileName>ucAgregarUsuario.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucAlmacenHardware" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEABQQAAAIkACAAAAACIAAAAAQAABAAAAAAAAAiE=</HashCode>
+      <FileName>ucAlmacenHardware.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucAlmacenPerifericos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABQAAAAIkACAAAAACIAAAAAQAABAAAAAAAAAiE=</HashCode>
+      <FileName>ucAlmacenPerifericos.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucAlmacenSoftware" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABQAAAAIkACAAAAACIAAAAAQAABAAAAAAAAAiE=</HashCode>
+      <FileName>ucAlmacenSoftware.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucCuentasPorCobrar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAQAAAAAkCAQAAAAhAAAAAAQAAAAAAAAAAAAAE=</HashCode>
+      <FileName>ucCuentasPorCobrar.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucFacturacion" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAQAAABAkAAAAAAAAEAEAAAQAAEAAQAAAAAAAI=</HashCode>
+      <FileName>ucFacturacion.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucGenerarReporte" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAkAAAAAAAAEAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ucGenerarReporte.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucListadoProductos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAkAAAAAAAgAAAAIAQAAAAAIgAAAAAAA=</HashCode>
+      <FileName>ucListadoProductos.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.ucModificarFactura" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAkAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ucModificarFactura.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SalesSoft_v2.Properties.Resources" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Properties.Settings" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Barcodes" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAIAAAACIAgBACAKAQAAAgAAA=</HashCode>
+      <FileName>Recursos\Codigobarra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Code39" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAgIAEAAAAAAAAAAAAQCAAQCAAAAAAAAAgA=</HashCode>
+      <FileName>Recursos\Codigobarra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Conexion" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Recursos\Conexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Entidad" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAgAIAAABAgAAAAAgAAAAAAAAAAgIAAAg=</HashCode>
+      <FileName>Recursos\Entidades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Persona" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAJAAAAAAABAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Recursos\Entidades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Suplidor" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Recursos\Entidades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Empleado" Collapsed="true">
+    <Position X="1.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEgAAAgAAAAgAAAAAAAAAAAAAAAAAABgAAAAQBAAFAA=</HashCode>
+      <FileName>Recursos\Entidades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Cliente" Collapsed="true">
+    <Position X="3.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAwAAAADBAAAAAAAgAAAAAAAgAAkAAAAA=</HashCode>
+      <FileName>Recursos\Entidades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Producto" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAYAAAAAAQAAAAEBAgAAQQAARAAAAgAgAAAIIAEQ=</HashCode>
+      <FileName>Recursos\Inventario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Hardware" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAFAAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Recursos\Inventario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Periferico" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAFAAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Recursos\Inventario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SalesSoft_v2.Recursos.Software" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAFAAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Recursos\Inventario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SalesSoft_v2.iTabbedMDI" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>iTabbedMDI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="SalesSoft_v2.delClosed" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>iTabbedMDI.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

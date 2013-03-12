@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using SalesSoft_v2.Recursos;
+using System.Data;
 
 namespace SalesSoft_v2
 {
@@ -58,6 +61,11 @@ namespace SalesSoft_v2
             {
                 CloseInitiated(this, new EventArgs());
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+         
         }
     }
 }

@@ -66,20 +66,24 @@ namespace SalesSoft_v2
             lbPrecio.Content = "";
            
         }
-        void Label_Deuda(int id)
+        decimal Label_Deuda(int id)
         {
             Decimal total = 0;
             Conexion.AbrirConexion();
+
             MySqlCommand cmd = new MySqlCommand("SELECT total FROM totalfactura WHERE   factura= '" + id + "' ", Conexion.varConexion);
+            
             MySqlDataReader data = cmd.ExecuteReader();
             while (data.Read())
             {
                 total += Convert.ToDecimal(data.GetString(0));
-                
+
             }
             
-            lbPrecio.Content = "RD $"+total;
+
+           // lbPrecio.Content = "RD $"+total;
                Conexion.CerrarConexion();
+               return total;
 
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -130,7 +134,7 @@ namespace SalesSoft_v2
 
         private void Click_cliente(object sender, EventArgs e)
         {
-
+             Decimal Total=0;
             Cliente verFactiura = new Cliente(Convert.ToInt32(dgFacturasPendientes.CurrentRow.Cells[1].Value));
             
             
@@ -140,27 +144,33 @@ namespace SalesSoft_v2
             tbDireccion.Text =verFactiura.Direccion;
 
 
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM facturas WHERE   pagada= '" + 0 + "' AND cliente= '" + verFactiura.ID + "'", Conexion.varConexion);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM facturas WHERE   pagada= '" + 1 + "' AND cliente= '" + verFactiura.ID + "'", Conexion.varConexion);
             DataSet dt = new DataSet();
+            
             da.Fill(dt);
+           
             dgFacturasIndividuales.DataSource = dt.Tables[0];
             
             label1.Content = "";
             lbPrecio.Content = "";
-            
-            Label_Deuda(Convert.ToInt32( dt.Tables[0].Rows[0][0]));
+            int i = 0;
+            while(dt.Tables[0].Rows.Count > i)
+            {
+
+                
+                Total += Convert.ToInt32(dt.Tables[0].Rows[i][9]);
+               i++;
+            }
+
+            lbPrecio.Content = "RD $" + Total;
             Conexion.CerrarConexion();
         }
 
         private void dgFacturasIndividuales_Click(object sender, EventArgs e)
         {
             Conexion.CerrarConexion();
-            Conexion.AbrirConexion();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM totalfactura WHERE   factura= '" + dgFacturasIndividuales.CurrentRow.Cells[0].Value + "' ", Conexion.varConexion);
-            DataSet dt = new DataSet();
-            da.Fill(dt);
-           
-           label1.Content= "RD $"+dt.Tables[0].Rows[0][2];
+
+            label1.Content = "RD $" + dgFacturasIndividuales.Rows[dgFacturasIndividuales.CurrentRow.Index].Cells[ 9 ].Value;
            Conexion.CerrarConexion();
         }
     }

@@ -257,24 +257,7 @@ namespace SalesSoft_v2.Recursos
        
         #endregion
     }
-    //clase administrativo deveria heredar de empleado tiene todo lo que necesita ...
-    //class Administrativo:Persona
-    //{
-    //    #region Campo
-    //    string _idEmpledo;
-    //    Decimal
-    //    #endregion
-    //    #region Propiedades
-
-    //    #endregion
-    //    #region Constructor
-
-    //    #endregion
-    //    #region Metodo
-
-    //    #endregion
-    //}
-
+ 
     class Cliente : Persona
     {
         

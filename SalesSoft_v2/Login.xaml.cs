@@ -52,12 +52,11 @@ namespace SalesSoft_v2
             
             UpdateProgressBarDelegate updatePbDelegate =
                 new UpdateProgressBarDelegate(Proces.SetValue);
-
            
             do
             {
-                value += 2;
-
+                value += 10;
+                
                 
                 Dispatcher.Invoke(updatePbDelegate,
                     System.Windows.Threading.DispatcherPriority.Background,

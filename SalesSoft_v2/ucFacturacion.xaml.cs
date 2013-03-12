@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 //Clases y Conexión
 using MySql.Data.MySqlClient;
 using SalesSoft_v2.Recursos;
@@ -25,9 +26,14 @@ namespace SalesSoft_v2
     /// </summary>
     public partial class ucFacturacion : UserControl, iTabbedMDI
     {
+        DataTable dt = new DataTable(); //creas una tabla
         public ucFacturacion()
         {
             InitializeComponent();
+            dt.Columns.Add("Producto"); //le creas las columnas
+            dt.Columns.Add("Precio");
+            dt.Columns.Add("Cantidad");
+            dt.Columns.Add("ID"); 
         }
         #region AgregarCliente
         private void Procesar(object sender, RoutedEventArgs e)
@@ -48,7 +54,7 @@ namespace SalesSoft_v2
         {
             if (tbNMienbro.Text != string.Empty)
             {
-                MessageBox.Show("El campo N Miembro  esta Lleno, Puede Procesar el Cliente");
+                MessageBox.Show("El campo N Miembro  esta Lleno, No  Puede Cargar el Cliente");
                 return;
             }
             Cliente Cliente_nuevo = new Cliente();
@@ -139,6 +145,149 @@ namespace SalesSoft_v2
             }
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int tipo = 0;
+            if (tbNombre.Text == string.Empty || tbDireccion.Text == string.Empty || tbNMienbro.Text == string.Empty)
+            {
+                MessageBox.Show("El un campo del Cliente esta vacío, porfavor llenar ");
+                return;
+            }
+            if (tbCantidad.Text == string.Empty )
+            {
+                MessageBox.Show("El campo Cantidad esta vacío, porfavor llenar ");
+                return;
+            }
+            Conexion.AbrirConexion();
+            MySqlCommand tabla = new MySqlCommand("SELECT tipo  FROM  productos WHERE nombreproducto='" + tbNombreP.Text+ "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+                tipo=data.GetInt32(0);
+            }
+            Conexion.CerrarConexion();
+            switch (tipo)
+            {
+                case 1:
+                    Hardware comprarH = new Hardware(tbNombreP.Text);
+                    tbPrecio.Text=Convert.ToString( comprarH.Precio);
+                    
+                    
+                    DataRow row = dt.NewRow(); //creas un registro
+                     row["Producto"] = comprarH.Nombre; //Le añadres un valor
+                     row["Precio"] = comprarH.Precio;
+                     row["Cantidad"] = tbCantidad.Text;
+                     row["ID"] = comprarH.ID_Producto;
+                    dt.Rows.Add(row); //añades el registro a la tabla
+                    dgProductos.DataSource = dt; //añades la tabla al datagrid
+                    dgProductos.Update(); //actualizas
+                    break;
+                case 2:
+                    Software comprars = new Software(tbNombreP.Text);
+                    tbPrecio.Text=Convert.ToString( comprars.Precio);
+                  
+                    
+                    DataRow rows = dt.NewRow(); //creas un registro
+                    rows["Producto"] = comprars.Nombre; //Le añadres un valor
+                    rows["Precio"] = comprars.Precio;
+                    rows["Cantidad"] = tbCantidad.Text;
+                    rows["ID"] = comprars.ID_Producto;
+                    dt.Rows.Add(rows); //añades el registro a la tabla
+                    dgProductos.DataSource = dt; //añades la tabla al datagrid
+                    dgProductos.Update(); //actualizas
+                    break;
+                case 3:
+                    Periferico comprarp = new Periferico(tbNombreP.Text);
+                    tbPrecio.Text=Convert.ToString( comprarp.Precio);
+                   
+                  
+                    DataRow rowp = dt.NewRow(); //creas un registro
+                    rowp["Producto"] = comprarp.Nombre; //Le añadres un valor
+                    rowp["Precio"] = comprarp.Precio;
+                    rowp["Cantidad"] = tbCantidad.Text;
+                    rowp["ID"] = comprarp.ID_Producto;
+                    dt.Rows.Add(rowp); //añades el registro a la tabla
+                    dgProductos.DataSource = dt; //añades la tabla al datagrid
+                    dgProductos.Update(); //actualizas
+                    break;
+               
+                default:
+                    break;
+            }
+                    
+        }
+
+
+        private void btnGuardar_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            string Producto, Precio, Cantidad,id;
+            int id_factura=0;
+            int activo = 0;
+            decimal total = 0;
+            
+            if (cbcredito.IsChecked == true)
+                activo = 1;
+            Conexion.CerrarConexion();
+            Conexion.AbrirConexion();
+            MySqlCommand tabla = new MySqlCommand("SELECT id_factura FROM  facturas ", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+                id_factura = data.GetInt32(0);
+            }
+            id_factura++;
+            foreach (System.Windows.Forms.DataGridViewRow row in dgProductos.Rows)
+                {
+                    if (Convert.ToString(row.Cells[0].Value) == string.Empty)
+                    {
+                        Cargar_final(id_factura, total);
+                        return;
+                    }
+
+                    Producto = Convert.ToString(row.Cells[0].Value);
+                    Precio = Convert.ToString(row.Cells[1 ].Value);
+                    Cantidad = Convert.ToString(row.Cells[2 ].Value);
+                    id= Convert.ToString(row.Cells[3].Value);
+                    total += Convert.ToDecimal(Convert.ToInt32(Precio) * Convert.ToInt32(Cantidad));
+                    Conexion.CerrarConexion();
+                    Conexion.AbrirConexion();
+
+                    MySqlCommand agregarfactura = new MySqlCommand
+                        ("INSERT INTO facturas (id_factura,cliente,producto,cantidad,facturador,pagada,formapago,fechafactura,precio) VALUES('"
+                        + id_factura + "','" +tbNMienbro.Text+ "','" +id+ "','" + Cantidad + "','" +Conexion.IdEntradaSistema
+                        + "','" + activo + "','" + cbFormaPago.Text + "','" + Convert.ToString(DateTime.Today) + "','" +
+                        Convert.ToInt32(Precio) * Convert.ToInt32(Cantidad) + "')", Conexion.varConexion);
+                    try
+                    {
+                        agregarfactura.ExecuteNonQuery();
+                       
+                    }
+
+
+                    finally
+                    {
+                        Conexion.CerrarConexion();
+                    }
+                
+            }
+         
+        }
+        void Cargar_final(int id_factura, decimal total)
+        {
+            Conexion.CerrarConexion();
+            Conexion.AbrirConexion();
+            MySqlCommand agregar = new MySqlCommand("INSERT INTO totalfactura (factura,total) VALUES('"
+                       + id_factura + "','" + total + "')", Conexion.varConexion);
+            try
+            {
+                agregar.ExecuteNonQuery();
+                MessageBox.Show("asdasdfas");
+            }
+            finally
+            {
+                Conexion.CerrarConexion();
+            }
+        }
     }
 }

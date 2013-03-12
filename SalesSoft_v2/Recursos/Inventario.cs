@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MySql.Data.MySqlClient;
 namespace SalesSoft_v2.Recursos
 {
     class Producto
@@ -116,6 +116,7 @@ namespace SalesSoft_v2.Recursos
         {
 
         }
+        
         #endregion
 
         #region Metodos
@@ -159,6 +160,29 @@ namespace SalesSoft_v2.Recursos
         {
             Tipo = 1;
         }
+        public Hardware(string nombre)
+        {
+            Conexion.AbrirConexion();
+
+            MySqlCommand tabla = new MySqlCommand("SELECT *FROM  productos  WHERE nombreproducto='" + nombre + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                ID_Producto = data.GetInt32(0);
+                Fabricante = data.GetString(1);
+                Modelo = data.GetString(2);
+                Nombre = nombre;
+                NumeroSerial = data.GetString(4);
+                Precio = data.GetInt32(5);
+                Cantidad = data.GetInt32(6);
+                Estante = data.GetInt32(7);
+                Tipo = data.GetInt32(8);
+                ExistenciaMinima = data.GetInt32(9);
+            }
+            Conexion.CerrarConexion();
+
+        }
         #endregion
 
     }
@@ -200,6 +224,29 @@ namespace SalesSoft_v2.Recursos
         {
             Tipo = 2;
         }
+        public Periferico(string nombre)
+        {
+            Conexion.AbrirConexion();
+
+            MySqlCommand tabla = new MySqlCommand("SELECT *FROM  productos  WHERE nombreproducto='" + nombre + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                ID_Producto = data.GetInt32(0);
+                Fabricante = data.GetString(1);
+                Modelo = data.GetString(2);
+                Nombre = nombre;
+                NumeroSerial = data.GetString(4);
+                Precio = data.GetInt32(5);
+                Cantidad = data.GetInt32(6);
+                Estante = data.GetInt32(7);
+                Tipo = data.GetInt32(8);
+                ExistenciaMinima = data.GetInt32(9);
+            }
+            Conexion.CerrarConexion();
+
+        }
         #endregion
 
     }
@@ -240,6 +287,29 @@ namespace SalesSoft_v2.Recursos
             : base()
         {
             Tipo = 3;
+
+        }
+        public Software(string nombre)
+        {
+            Conexion.AbrirConexion();
+
+            MySqlCommand tabla = new MySqlCommand("SELECT *FROM  productos  WHERE nombreproducto='" + nombre + "'", Conexion.varConexion);
+            MySqlDataReader data = tabla.ExecuteReader();
+            while (data.Read())
+            {
+
+                ID_Producto = data.GetInt32(0);
+                Fabricante = data.GetString(1);
+                Modelo = data.GetString(2);
+                Nombre = nombre;
+                NumeroSerial = data.GetString(4);
+                Precio = data.GetInt32(5);
+                Cantidad = data.GetInt32(6);
+                Estante = data.GetInt32(7);
+                Tipo = data.GetInt32(8);
+                ExistenciaMinima = data.GetInt32(9);
+            }
+            Conexion.CerrarConexion();
 
         }
         #endregion

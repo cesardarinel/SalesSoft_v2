@@ -27,6 +27,7 @@ namespace SalesSoft_v2
     public partial class ucFacturacion : UserControl, iTabbedMDI
     {
         DataTable dt = new DataTable(); //creas una tabla
+        decimal suma = 0;
         public ucFacturacion()
         {
             InitializeComponent();
@@ -158,6 +159,13 @@ namespace SalesSoft_v2
                 MessageBox.Show("El campo Cantidad esta vacío, porfavor llenar ");
                 return;
             }
+            if (cbFormaPago.Text == string.Empty)
+            {
+                MessageBox.Show("El campo Forma de pago esta vacío, porfavor llenar ");
+                return;
+            }
+            
+            
             Conexion.AbrirConexion();
             MySqlCommand tabla = new MySqlCommand("SELECT tipo  FROM  productos WHERE nombreproducto='" + tbNombreP.Text+ "'", Conexion.varConexion);
             MySqlDataReader data = tabla.ExecuteReader();
@@ -166,13 +174,15 @@ namespace SalesSoft_v2
                 tipo=data.GetInt32(0);
             }
             Conexion.CerrarConexion();
+           
             switch (tipo)
             {
                 case 1:
                     Hardware comprarH = new Hardware(tbNombreP.Text);
                     tbPrecio.Text=Convert.ToString( comprarH.Precio);
-                    
-                    
+
+                    suma+=comprarH.Precio*Convert.ToInt32(tbCantidad.Text);
+                    lbpagar.Content = suma;
                     DataRow row = dt.NewRow(); //creas un registro
                      row["Producto"] = comprarH.Nombre; //Le añadres un valor
                      row["Precio"] = comprarH.Precio;
@@ -185,8 +195,9 @@ namespace SalesSoft_v2
                 case 2:
                     Software comprars = new Software(tbNombreP.Text);
                     tbPrecio.Text=Convert.ToString( comprars.Precio);
-                  
-                    
+
+                    suma += comprars.Precio * Convert.ToInt32(tbCantidad.Text);
+                    lbpagar.Content = suma;
                     DataRow rows = dt.NewRow(); //creas un registro
                     rows["Producto"] = comprars.Nombre; //Le añadres un valor
                     rows["Precio"] = comprars.Precio;
@@ -199,8 +210,9 @@ namespace SalesSoft_v2
                 case 3:
                     Periferico comprarp = new Periferico(tbNombreP.Text);
                     tbPrecio.Text=Convert.ToString( comprarp.Precio);
-                   
-                  
+
+                    suma += comprarp.Precio * Convert.ToInt32(tbCantidad.Text);
+                    lbpagar.Content = suma;
                     DataRow rowp = dt.NewRow(); //creas un registro
                     rowp["Producto"] = comprarp.Nombre; //Le añadres un valor
                     rowp["Precio"] = comprarp.Precio;
@@ -225,7 +237,11 @@ namespace SalesSoft_v2
             int id_factura=0;
             int activo = 0;
             decimal total = 0;
-            
+            if (tbPago.Text == string.Empty)
+            {
+                MessageBox.Show("El campo Pago esta vacío, porfavor llenar ");
+                return;
+            }
             if (cbcredito.IsChecked == true)
                 activo = 1;
             Conexion.CerrarConexion();
@@ -282,12 +298,27 @@ namespace SalesSoft_v2
             try
             {
                 agregar.ExecuteNonQuery();
-                MessageBox.Show("asdasdfas");
+                tbNombreP.Text = null;
+                tbPrecio.Text = null;
+                tbCantidad.Text = null;
+                tbNombre.Text = null;
+                tbTelefono.Text = null;
+                tbDireccion.Text = null;
+                tbNMienbro.Text = null;
+                lbDevuelta.Content = total - Convert.ToInt32(tbPago.Text);
+                MessageBox.Show("Gracias Por Su Compra !!!");
             }
             finally
             {
                 Conexion.CerrarConexion();
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            tbNombreP.Text = null;
+            tbPrecio.Text = null;
+            tbCantidad.Text = null;
         }
     }
 }

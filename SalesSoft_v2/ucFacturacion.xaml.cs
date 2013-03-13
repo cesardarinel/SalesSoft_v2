@@ -31,6 +31,8 @@ namespace SalesSoft_v2
         public ucFacturacion()
         {
             InitializeComponent();
+            lbDevuelta.Content = null;
+            lbpagar.Content = null;
             dt.Columns.Add("Producto"); //le creas las columnas
             dt.Columns.Add("Precio");
             dt.Columns.Add("Cantidad");
@@ -182,7 +184,7 @@ namespace SalesSoft_v2
                     tbPrecio.Text=Convert.ToString( comprarH.Precio);
 
                     suma+=comprarH.Precio*Convert.ToInt32(tbCantidad.Text);
-                    lbpagar.Content = suma;
+                    lbpagar.Content = suma +"-10% ";
                     DataRow row = dt.NewRow(); //creas un registro
                      row["Producto"] = comprarH.Nombre; //Le añadres un valor
                      row["Precio"] = comprarH.Precio;
@@ -257,7 +259,18 @@ namespace SalesSoft_v2
                 {
                     if (Convert.ToString(row.Cells[0].Value) == string.Empty)
                     {
-                        Cargar_final(id_factura, total);
+                        Conexion.CerrarConexion();
+                        Conexion.AbrirConexion();
+                        MySqlCommand tablass = new MySqlCommand("SELECT * FROM clientes WHERE tipocliente='1' AND nombrecompleto='"+tbNombre.Text+"'", Conexion.varConexion);
+                        MySqlDataReader datass = tabla.ExecuteReader();
+                        if (datass.Read())
+                        {
+                            Cargar_final(id_factura, (total-(total*(decimal) 0.10 )));
+                        }
+                        else
+                        {
+                            Cargar_final(id_factura, total);
+                        }
                         return;
                     }
 
@@ -305,7 +318,7 @@ namespace SalesSoft_v2
                 tbTelefono.Text = null;
                 tbDireccion.Text = null;
                 tbNMienbro.Text = null;
-                lbDevuelta.Content = total - Convert.ToInt32(tbPago.Text);
+                lbDevuelta.Content ="RD $"+ (total - Convert.ToInt32(tbPago.Text));
                 MessageBox.Show("Gracias Por Su Compra !!!");
             }
             finally
